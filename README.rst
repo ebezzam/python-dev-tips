@@ -1,6 +1,9 @@
-# python-dev-tips
+***************
+python-dev-tips
+***************
 
-## Creating virtual environment
+Creating virtual environment
+============================
 
 With `Anaconda <https://www.anaconda.com/>`__ (recommended). 
 After installing Anaconda or `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`__ (light version), create a new environment:
