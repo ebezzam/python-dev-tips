@@ -20,7 +20,7 @@ After installing Anaconda or `Miniconda <https://docs.conda.io/en/latest/minicon
     conda activate project_env
 
     # deactivate environment
-    conda deactivate
+    (project_env) conda deactivate
 
 
 For machines really light on memory (e.g. Raspberry Pi) use 
@@ -38,4 +38,33 @@ For machines really light on memory (e.g. Raspberry Pi) use
     source project_env/bin/activate
 
     # deactivate virtual environment
-    deactivate
+    (project_env) deactivate
+
+
+Code formatting
+===============
+
+Through pre-commit hooks:
+
+.. code:: bash
+
+    # inside virtual environment
+    (project_env) pip install pre-commit
+    (project_env) pip install black
+
+    # Install git hooks
+    (project_env) pre-commit install
+    # pre-commit installed at .git/hooks/pre-commit
+
+
+TODO
+====
+
+- profiling to compare RFFT and FFT
+- unit test to check that they are equal when signal is real
+- setup file
+- example file with hydra
+- pypi 
+- manifest file to not include file in package
+- GitHub actions
+- documentation if time
