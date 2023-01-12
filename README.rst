@@ -111,7 +111,6 @@ TODO
 ====
 
 - matplotlib in dev install
-- unit test to check that they are equal when signal is real
 - example file with hydra
 - manifest file to not include file in package
 - GitHub actions

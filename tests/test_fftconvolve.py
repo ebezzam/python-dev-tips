@@ -35,3 +35,22 @@ def test_fft():
 
     # check results
     assert np.allclose(fft_out, fft_out)
+
+
+def test_fft_complex():
+
+    # create complex signal
+    signal = np.random.randn(n) + 1j * np.random.randn(n)
+
+    # create complex filter
+    filter = np.random.randn(n) + 1j * np.random.randn(n)
+
+    # create object
+    fft_convolver = FFTConvolve(filter=filter, length=len(signal))
+
+    # convolve
+    fft_out = fft_convolver(signal)
+
+    # check results
+    fft_naive = np.convolve(signal, filter, mode="full")
+    assert np.allclose(fft_out, fft_naive)
