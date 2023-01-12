@@ -2,8 +2,8 @@
 python-dev-tips
 ***************
 
-Creating virtual environment
-============================
+Creating virtual environment and install
+========================================
 
 With `Anaconda <https://www.anaconda.com/>`__ (recommended). 
 After installing Anaconda or `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`__ (light version), create a new environment:
@@ -61,6 +61,27 @@ Through pre-commit hooks:
     # Install git hooks
     (project_env) pre-commit install
     # pre-commit installed at .git/hooks/pre-commit
+
+
+Releasing package to PyPi
+=========================
+
+This is done through `twine <https://pypi.org/project/twine/>`__:
+
+.. code:: bash
+
+    # inside virtual environment
+    (project_env) pip install twine
+
+    # build package
+    (project_env) python setup.py sdist bdist_wheel
+    # -- create in dist folder
+
+    # upload to test pypi
+    (project_env) python -m twine upload  dist/pydevtips-X.X.X.tar.gz
+    # -- X.X.X is the version number in setup.py
+    # -- enter username and password
+    # -- check https://pypi.org/project/pydevtips/X.X.X/
 
 
 TODO
