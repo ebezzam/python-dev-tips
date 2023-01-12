@@ -86,33 +86,46 @@ To run a specific test:
     (project_env) pytest tests/test_fftconvolve.py::test_fft
 
 
-Releasing package to PyPi
-=========================
+Releasing new version and deploy to PyPi
+========================================
 
-This is done through `twine <https://pypi.org/project/twine/>`__:
+Uploading to PyPi is done via `twine <https://pypi.org/project/twine/>`__.
+
+In the steps below, replace "X.X.X" with the appropriate version number.
 
 .. code:: bash
 
     # inside virtual environment
     (project_env) pip install twine
 
+    # edit version in setup
     # build package
     (project_env) python setup.py sdist bdist_wheel
-    # -- create in dist folder
+    # -- creates zip in dist folder
 
-    # upload to test pypi
+    # upload to pypi
     (project_env) python -m twine upload  dist/pydevtips-X.X.X.tar.gz
     # -- X.X.X is the version number in setup.py
     # -- enter username and password
     # -- check https://pypi.org/project/pydevtips/X.X.X/
 
+    # new release on GitHub
+    git tag -a X.X.X -m "version X.X.X"
+    git push origin X.X.X
+
+On `GitHub <https://github.com/ebezzam/pydevtips/tags>`__ set the new tag 
+by (1) clicking "..." and selecting "Create release" and (2) at the bottom 
+pressing “Publish release”.
+
 
 TODO
 ====
 
+- github page
+- point out features in scripts: object-oriented, asserts, tqdm, type hints
 - matplotlib, pytest, black in dev install
 - example file with hydra
 - manifest file to not include file in package
-- GitHub actions for formating and unit tests
 - GitHub actions for releasing to PyPi
-- documentation if time
+- documentation (autodoc)
+- adding badges to README

@@ -5,7 +5,7 @@ with open("README.rst", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pydevtips",
-    version="0.0.1",
+    version="0.0.2",
     author="Eric Bezzam",
     author_email="ebezzam@gmail.com",
     description="Functions and scripts to demonstrate Python development tips.",
