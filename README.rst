@@ -60,6 +60,7 @@ Through pre-commit hooks:
 TODO
 ====
 
+- matplotlib in dev install
 - profiling to compare RFFT and FFT
 - unit test to check that they are equal when signal is real
 - setup file
