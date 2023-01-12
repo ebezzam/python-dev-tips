@@ -17,7 +17,8 @@ class FFTConvolveBase(object):
 
         assert isinstance(filter, np.ndarray)
         self.filter = filter
-        self.length = length
+        self.signal_length = length
+        self.pad_length = len(filter) + length - 1
         self.filter_frequency_response = self._compute_filter_frequency_response()
 
     @abstractmethod
@@ -48,7 +49,7 @@ class RFFTConvolve(FFTConvolveBase):
 
     def _compute_filter_frequency_response(self):
         """Compute the filter frequency response."""
-        return np.fft.rfft(self.filter, n=self.length)
+        return np.fft.rfft(self.filter, n=self.pad_length)
 
     def __call__(self, signal) -> np.ndarray:
         """
@@ -62,8 +63,10 @@ class RFFTConvolve(FFTConvolveBase):
         result : np.ndarray
             Convolved signal.
         """
-        signal_frequency_response = np.fft.rfft(signal)
-        return np.fft.irfft(signal_frequency_response * self.filter_frequency_response)
+        signal_frequency_response = np.fft.rfft(signal, n=self.pad_length)
+        return np.fft.irfft(
+            signal_frequency_response * self.filter_frequency_response, n=self.pad_length
+        )
 
 
 class FFTConvolve(FFTConvolveBase):
@@ -74,7 +77,7 @@ class FFTConvolve(FFTConvolveBase):
 
     def _compute_filter_frequency_response(self):
         """Compute the filter frequency response."""
-        return np.fft.fft(self.filter, n=self.length)
+        return np.fft.fft(self.filter, n=self.pad_length)
 
     def __call__(self, signal) -> np.ndarray:
         """
@@ -88,5 +91,7 @@ class FFTConvolve(FFTConvolveBase):
         result : np.ndarray
             Convolved signal.
         """
-        signal_frequency_response = np.fft.fft(signal)
-        return np.fft.ifft(signal_frequency_response * self.filter_frequency_response)
+        signal_frequency_response = np.fft.fft(signal, n=self.pad_length)
+        return np.fft.ifft(
+            signal_frequency_response * self.filter_frequency_response, n=self.pad_length
+        )

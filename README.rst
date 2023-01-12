@@ -63,6 +63,29 @@ Through pre-commit hooks:
     # pre-commit installed at .git/hooks/pre-commit
 
 
+Testing
+=======
+
+Write tests in the `tests` folder as function that begin with `test_`.
+
+To run tests (install `pytest <https://docs.pytest.org/en/stable/>`__ first if not already done):
+
+.. code:: bash
+
+    # inside virtual environment
+    (project_env) pip install pytest
+
+    # run tests
+    (project_env) pytest
+
+To run a specific test:
+
+.. code:: bash
+
+    # inside virtual environment
+    (project_env) pytest tests/test_fftconvolve.py::test_fft
+
+
 Releasing package to PyPi
 =========================
 
@@ -88,7 +111,6 @@ TODO
 ====
 
 - matplotlib in dev install
-- profiling to compare RFFT and FFT
 - unit test to check that they are equal when signal is real
 - example file with hydra
 - manifest file to not include file in package
