@@ -110,8 +110,9 @@ This is done through `twine <https://pypi.org/project/twine/>`__:
 TODO
 ====
 
-- matplotlib in dev install
+- matplotlib, pytest, black in dev install
 - example file with hydra
 - manifest file to not include file in package
-- GitHub actions
+- GitHub actions for formating and unit tests
+- GitHub actions for releasing to PyPi
 - documentation if time
