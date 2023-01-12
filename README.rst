@@ -2,7 +2,7 @@
 python-dev-tips, `Slides <https://docs.google.com/presentation/d/1BnezhwUy22DiF72wss8GU_YIMfhjortz-uILdIFGuoM/edit?usp=sharing>`__
 ******************************************************************************************************************************************
 
-Tutorial first given at ENS Ulm (January 2023) on how to develop a Python package (scientific computing perspective).
+Tutorial first given at ENS Ulm (January 2023) on how to develop a Python package. There is a slight focus on scientific computing, but the general principles apply to any Python project.
 
 .. contents:: **Table of Contents**
 
@@ -115,12 +115,11 @@ See `Semantic Versioning <https://semver.org/>`__ for recommendations on picking
     # -- enter username and password
     # -- check https://pypi.org/project/pydevtips/X.X.X/
 
-    # new release on GitHub
+    # new tag on GitHub
     git tag -a X.X.X -m "version X.X.X"
     git push origin X.X.X
 
-On `GitHub <https://github.com/ebezzam/python-dev-tips/tags>`__ set the new tag 
-by:
+On `GitHub <https://github.com/ebezzam/python-dev-tips/tags>`__ create a new release by:
 
 #. Clicking (the rightmost) "..." dropdown menu.
 #. Selecting "Create release". 
