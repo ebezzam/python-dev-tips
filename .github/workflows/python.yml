@@ -1,6 +1,14 @@
 name: pydevtips
 
-on: [push, pull_request]
+# on: [push, pull_request]
+on:
+  # trigger on pushes and PRs to main
+  push:
+      branches:
+        - main
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build:
