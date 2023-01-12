@@ -91,7 +91,6 @@ TODO
 - profiling to compare RFFT and FFT
 - unit test to check that they are equal when signal is real
 - example file with hydra
-- pypi 
 - manifest file to not include file in package
 - GitHub actions
 - documentation if time
