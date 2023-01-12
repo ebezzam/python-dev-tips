@@ -19,6 +19,9 @@ After installing Anaconda or `Miniconda <https://docs.conda.io/en/latest/minicon
     # activate environment
     conda activate project_env
 
+    # instal package locally
+    (project_env) pip install -e .
+
     # deactivate environment
     (project_env) conda deactivate
 
@@ -36,6 +39,9 @@ For machines really light on memory (e.g. Raspberry Pi) use
 
     # activate virtual environment
     source project_env/bin/activate
+
+    # instal package locally
+    (project_env) pip install -e .
 
     # deactivate virtual environment
     (project_env) deactivate
@@ -63,7 +69,6 @@ TODO
 - matplotlib in dev install
 - profiling to compare RFFT and FFT
 - unit test to check that they are equal when signal is real
-- setup file
 - example file with hydra
 - pypi 
 - manifest file to not include file in package
