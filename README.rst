@@ -91,7 +91,9 @@ Releasing new version and deploy to PyPi
 
 Uploading to PyPi is done via `twine <https://pypi.org/project/twine/>`__.
 
-In the steps below, replace "X.X.X" with the appropriate version number.
+In the steps below and **after merging to ``main``**, replace "X.X.X" with the appropriate version number.
+
+See `Semantic Versioning <https://semver.org/>`__ for recommendations on picking version numbers.
 
 .. code:: bash
 
@@ -113,19 +115,20 @@ In the steps below, replace "X.X.X" with the appropriate version number.
     git tag -a X.X.X -m "version X.X.X"
     git push origin X.X.X
 
-On `GitHub <https://github.com/ebezzam/pydevtips/tags>`__ set the new tag 
-by (1) clicking "..." and selecting "Create release" and (2) at the bottom 
-pressing “Publish release”.
+On `GitHub <https://github.com/ebezzam/python-dev-tips/tags>`__ set the new tag 
+by (1) clicking  (the rightmost) "..." and selecting "Create release" and (2) at the bottom 
+pressing "Publish release".
 
 
 TODO
 ====
 
+- joblib example in profile
 - github page
 - point out features in scripts: object-oriented, asserts, tqdm, type hints
 - matplotlib, pytest, black in dev install
 - example file with hydra
 - manifest file to not include file in package
-- GitHub actions for releasing to PyPi
+- GitHub actions for releasing to PyPi when changes to version
 - documentation (autodoc)
 - adding badges to README
