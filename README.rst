@@ -6,8 +6,8 @@ Tutorial first given at ENS Ulm (January 2023) on how to develop a Python packag
 
 .. contents:: **Table of Contents**
 
-Creating virtual environment and install
-========================================
+Creating virtual environment and local install
+==============================================
 
 With `Anaconda <https://www.anaconda.com/>`__ (recommended). 
 After installing Anaconda or `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`__ (light version), create a new environment:
@@ -90,8 +90,8 @@ To run a specific test:
     (project_env) pytest tests/test_fftconvolve.py::test_fft
 
 
-Releasing new version and deploy to PyPi
-========================================
+Releasing new version and deploying to PyPi
+===========================================
 
 Uploading to PyPi is done via `twine <https://pypi.org/project/twine/>`__.
 
