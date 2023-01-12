@@ -4,11 +4,11 @@ name: pydevtips
 on:
   # trigger on pushes and PRs to main
   push:
-      branches:
-        - main
+    branches:
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
