@@ -120,8 +120,11 @@ See `Semantic Versioning <https://semver.org/>`__ for recommendations on picking
     git push origin X.X.X
 
 On `GitHub <https://github.com/ebezzam/python-dev-tips/tags>`__ set the new tag 
-by (1) clicking  (the rightmost) "..." and selecting "Create release" and (2) at the bottom 
-pressing "Publish release".
+by:
+
+#. Clicking (the rightmost) "..." dropdown menu.
+#. Selecting "Create release". 
+#. At the bottom pressing "Publish release".
 
 
 TODO
