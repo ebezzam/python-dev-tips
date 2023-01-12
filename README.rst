@@ -2,6 +2,10 @@
 python-dev-tips, `Slides <https://docs.google.com/presentation/d/1BnezhwUy22DiF72wss8GU_YIMfhjortz-uILdIFGuoM/edit?usp=sharing>`__
 ******************************************************************************************************************************************
 
+Tutorial first given at ENS Ulm (January 2023) on how to develop a Python package (scientific computing perspective).
+
+.. contents:: **Table of Contents**
+
 Creating virtual environment and install
 ========================================
 
@@ -91,7 +95,7 @@ Releasing new version and deploy to PyPi
 
 Uploading to PyPi is done via `twine <https://pypi.org/project/twine/>`__.
 
-In the steps below and **after merging to ``main``**, replace "X.X.X" with the appropriate version number.
+In the steps below and **after merging to** ``main``, replace "X.X.X" with the appropriate version number.
 
 See `Semantic Versioning <https://semver.org/>`__ for recommendations on picking version numbers.
 
