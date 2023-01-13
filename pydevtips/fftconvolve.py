@@ -2,7 +2,7 @@ import numpy as np
 from abc import abstractmethod
 
 
-class FFTConvolveBase(object):
+class FFTConvolveBase:
     """Base class for FFT convolve."""
 
     def __init__(self, filter, length) -> None:
