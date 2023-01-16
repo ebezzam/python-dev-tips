@@ -43,7 +43,13 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.autosummary",
     "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
 ]
+
+autodoc_default_options = {
+    "members": True,
+}
+autodoc_typehints = "none"  # for cleaner sphinx output, don't show type hints
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
