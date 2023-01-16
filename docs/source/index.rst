@@ -16,6 +16,7 @@ Contents
 .. toctree::
 
    documentation
+   badges
 
 .. toctree::
    :caption: Code

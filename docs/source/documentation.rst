@@ -1,7 +1,7 @@
 Documentation
 =============
 
-We will be using a `Sphinx <https://www.sphinx-doc.org/en/master/>`__ to generate documentation from 
+We will be using `Sphinx <https://www.sphinx-doc.org/en/master/>`__ to generate documentation from 
 docstrings that are written within code. Docstrings are long-form
 comments beneath class and functions declaration that typically describe:
 
@@ -148,6 +148,7 @@ To publish on RTD:
 
 #. Make an account: https://readthedocs.org/accounts/signup/
 #. Import a project from the `dashboard <https://readthedocs.org/dashboard/>`__. There are two ways to do this: (1) linking your GitHub account and selecting one of your **public** repositories, or (2) importing the project manually. When linking to GitHub, the documentation is re-built whenever there are changes to the selected branch.
+#. Check your project page for the build status.
 
-You can (optionally) define a `.readthedocs.yaml <>`__ 
+You can (optionally) define a `.readthedocs.yaml <https://github.com/ebezzam/python-dev-tips/blob/feat/docs/.readthedocs.yaml>`__ 
 file to ensure a build environment as close as possible to your local machine.

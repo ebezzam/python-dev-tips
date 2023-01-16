@@ -2,6 +2,15 @@
 python-dev-tips, `Slides <https://docs.google.com/presentation/d/1BnezhwUy22DiF72wss8GU_YIMfhjortz-uILdIFGuoM/edit?usp=sharing>`__
 ******************************************************************************************************************************************
 
+.. image:: https://readthedocs.org/projects/python-dev-tips/badge/?version=latest
+    :target: http://python-dev-tips.readthedocs.io/en/latest/
+    :alt: Documentation Status
+
+
+.. image:: https://github.com/ebezzam/python-dev-tips/actions/workflows/python.yml/badge.svg
+    :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/python.yml
+    :alt: Unit tests and formatting
+
 Tutorial first given at ENS Ulm (January 2023) on how to develop a Python package. There is a slight focus on scientific computing, but the general principles apply to any Python project.
 
 .. contents:: **Table of Contents**
@@ -129,6 +138,7 @@ On `GitHub <https://github.com/ebezzam/python-dev-tips/tags>`__ create a new rel
 TODO
 ====
 
+- change documentation links to main branch
 - joblib example in profile
 - github page
 - point out features in scripts: object-oriented, asserts, tqdm, type hints
