@@ -90,70 +90,6 @@ To run a specific test:
     (project_env) pytest tests/test_fftconvolve.py::test_fft
 
 
-Documentation
-=============
-
-Will be using `Sphinx <https://www.sphinx-doc.org/en/master/>`__ to generate documentation.
-
-#. Write docstrings when coding. Great if already started!
-
-First time only steps
-#. (Recommended) create a lightweight virtual environment for building the documentation. Can save a lot of time when building docs remotely, as we'll show with ReadTheDocs
-
-.. code:: bash
-    
-    # create new environment, press enter to accept
-    conda create -n docs_env python=3.9
-
-    # activate environment
-    conda activate docs_env
-
-    # install requirements
-    (docs_env) pip install -e .
-    (docs_env) cd docs
-    (docs_env) pip install -r requirements.txt
-
-#. Use ``sphinx-quickstart`` (first-time only!). Do separate source and build. Enter project details through terminal.
-
-Otherwise
-
-#. Fill in index and create other files. Edit conf, like adding mock docs.
-#. Build docs with e.g. ``make html``.
-#. open ``docs/build/html/index.html`` in browser.
-#. host on `ReadTheDocs <https://readthedocs.org/>`__ or GitHub pages.
-
-
-Some documentation tips
------------------------
-
-- take a look at our conf.py which we've modified from the generated one
-- ex: changing theme to RTD
-- intersphinx mapping to connect to other docs
-- mock imports
-
-.. code:: bash
-    
-    # create new environment, press enter to accept
-    conda create -n docs_env python=3.9
-
-    # activate environment
-    conda activate docs_env
-
-    # install requirements
-    (docs_env) pip install -r docs/requirements.txt
-
-#. Will be using `Sphinx <https://www.sphinx-doc.org/en/master/>`__ to generate documentation. This requires 
-
-.. code:: bash
-
-    # build docs
-    (docs_env) python setup.py build_sphinx
-
-    
-
-#. Use `Sphinx <https://www.sphinx-doc.org/en/master/>`__ to generate documentation.
-
-
 Releasing new version and deploying to PyPi
 ===========================================
 
@@ -200,5 +136,4 @@ TODO
 - example file with hydra
 - manifest file to not include file in package
 - GitHub actions for releasing to PyPi when changes to version
-- documentation (autodoc)
 - adding badges to README

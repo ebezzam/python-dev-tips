@@ -1,5 +1,5 @@
-FFT Convolve
-============
+Class example
+=============
 
 .. GENERATE DOCUMENTATION FOR ALL CLASSES
 .. .. automodule:: pydevtips.fftconvolve
@@ -8,7 +8,7 @@ FFT Convolve
 ..     :special-members: __init__, __call__
 
 
-.. GENERATE ONE AT A TIME WITH CUSTOM TEXT
+.. GENERATE INDIVIDUALLY WITH CUSTOM TEXT
 
 There are two classes in this module for performing convolution in the frequency domain with a fixed filter.
 

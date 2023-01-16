@@ -50,7 +50,7 @@ class RFFTConvolve(FFTConvolveBase):
     """Real FFT convolve."""
 
     def __init__(self, filter, length) -> None:
-        r"""
+        """
         Create convolver that uses a real-valued filter.
 
         Parameters
@@ -66,11 +66,11 @@ class RFFTConvolve(FFTConvolveBase):
         super(RFFTConvolve, self).__init__(filter, length)
 
     def _compute_filter_frequency_response(self):
-        r"""Compute the filter frequency response."""
+        """Compute the filter frequency response."""
         return np.fft.rfft(self.filter, n=self.pad_length)
 
     def __call__(self, signal) -> np.ndarray:
-        r"""
+        """
         Apply the real-valued filter to the signal, in the frequency domain.
 
         Parameters

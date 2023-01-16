@@ -14,9 +14,14 @@ Contents
 --------
 
 .. toctree::
+
+   documentation
+
+.. toctree::
    :caption: Code
 
    fftconvolve
+   utils
 
 
 Indices and tables
