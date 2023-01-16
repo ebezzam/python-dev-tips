@@ -92,8 +92,8 @@ Adding new pages to your documentation amount to:
 #. Rebuilding the documentation, e.g. with ``make html``.
 
 You may also need to edit the ``conf.py`` file to use different features.
-Check out our `index.rst <https://raw.githubusercontent.com/ebezzam/python-dev-tips/feat/docs/docs/source/index.rst>`__
-and `conf.py <https://github.com/ebezzam/python-dev-tips/blob/feat/docs/docs/source/conf.py>`__
+Check out our `index.rst <https://raw.githubusercontent.com/ebezzam/python-dev-tips/main/docs/source/index.rst>`__
+and `conf.py <https://github.com/ebezzam/python-dev-tips/blob/main/docs/source/conf.py>`__
 files for example configurations.
 
 
@@ -108,10 +108,10 @@ You can do a clean build of your documentation with the following commands:
 Pro-tips
 --------
 
-* Changing to the ReadTheDocs theme inside `conf.py <https://github.com/ebezzam/python-dev-tips/blob/ec6b15c6718b96e2c1a00496d2cf7005755d006c/docs/source/conf.py#L75>`__.
+* Changing to the ReadTheDocs theme inside `conf.py <https://github.com/ebezzam/python-dev-tips/blob/e51dd62a2dd156fdd3e559be3930f87f2a4e6405/docs/source/conf.py#L75>`__.
 * `Intersphinx <https://docs.readthedocs.io/en/stable/guides/intersphinx.html>`__ for linking to other documentations.
-  In the ``conf.py`` file: `add <https://github.com/ebezzam/python-dev-tips/blob/ec6b15c6718b96e2c1a00496d2cf7005755d006c/docs/source/conf.py#L43>`__
-  the Sphinx extension, and `link <https://github.com/ebezzam/python-dev-tips/blob/ec6b15c6718b96e2c1a00496d2cf7005755d006c/docs/source/conf.py#L54>`__
+  In the ``conf.py`` file: `add <https://github.com/ebezzam/python-dev-tips/blob/e51dd62a2dd156fdd3e559be3930f87f2a4e6405/docs/source/conf.py#L43>`__
+  the Sphinx extension, and `link <https://github.com/ebezzam/python-dev-tips/blob/e51dd62a2dd156fdd3e559be3930f87f2a4e6405/docs/source/conf.py#L54>`__
   to the other documentation. Inside your documentation you can link to the other library, e.g.
   for data types:
 
@@ -129,10 +129,10 @@ Pro-tips
 
   which renders as in :func:`pydevtips.fftconvolve.RFFTConvolve.__init__` 
   with a clickable link to NumPy's documentation.
-* `Mock modules <https://github.com/ebezzam/python-dev-tips/blob/ec6b15c6718b96e2c1a00496d2cf7005755d006c/docs/source/conf.py#L24>`__ to keep your documentation virtual environment light.
-* `Add the path <https://github.com/ebezzam/python-dev-tips/blob/feat/docs/docs/source/conf.py#L22>`__ 
+* `Mock modules <https://github.com/ebezzam/python-dev-tips/blob/e51dd62a2dd156fdd3e559be3930f87f2a4e6405/docs/source/conf.py#L24>`__ to keep your documentation virtual environment light.
+* `Add the path <https://github.com/ebezzam/python-dev-tips/blob/e51dd62a2dd156fdd3e559be3930f87f2a4e6405/docs/source/conf.py#L22>`__ 
   to your package, so that it doesn't have to be installed (again keeping your documentation environment light!).
-* `Automate year <https://github.com/ebezzam/python-dev-tips/blob/ec6b15c6718b96e2c1a00496d2cf7005755d006c/docs/source/conf.py#L32>`__.
+* `Automate year <https://github.com/ebezzam/python-dev-tips/blob/e51dd62a2dd156fdd3e559be3930f87f2a4e6405/docs/source/conf.py#L32>`__.
 
 
 Publishing
@@ -150,5 +150,5 @@ To publish on RTD:
 #. Import a project from the `dashboard <https://readthedocs.org/dashboard/>`__. There are two ways to do this: (1) linking your GitHub account and selecting one of your **public** repositories, or (2) importing the project manually. When linking to GitHub, the documentation is re-built whenever there are changes to the selected branch.
 #. Check your project page for the build status.
 
-You can (optionally) define a `.readthedocs.yaml <https://github.com/ebezzam/python-dev-tips/blob/feat/docs/.readthedocs.yaml>`__ 
+You can (optionally) define a `.readthedocs.yaml <https://github.com/ebezzam/python-dev-tips/blob/main/.readthedocs.yaml>`__ 
 file to ensure a build environment as close as possible to your local machine.
