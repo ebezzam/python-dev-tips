@@ -2,8 +2,8 @@
 python-dev-tips, `Slides <https://docs.google.com/presentation/d/1BnezhwUy22DiF72wss8GU_YIMfhjortz-uILdIFGuoM/edit?usp=sharing>`__
 ******************************************************************************************************************************************
 
-.. image:: https://readthedocs.org/projects/python-dev-tips/badge/?version=latest
-    :target: http://python-dev-tips.readthedocs.io/en/latest/
+.. image:: https://readthedocs.org/projects/pydevtips/badge/?version=latest
+    :target: http://pydevtips.readthedocs.io/en/latest/
     :alt: Documentation Status
 
 
@@ -32,7 +32,7 @@ After installing Anaconda or `Miniconda <https://docs.conda.io/en/latest/minicon
     # activate environment
     conda activate project_env
 
-    # instal package locally
+    # install package locally
     (project_env) pip install -e .
 
     # deactivate environment
@@ -53,7 +53,7 @@ For machines really light on memory (e.g. Raspberry Pi) use
     # activate virtual environment
     source project_env/bin/activate
 
-    # instal package locally
+    # install package locally
     (project_env) pip install -e .
 
     # deactivate virtual environment

@@ -7,14 +7,14 @@ For example, in a `reStructuredText <https://www.sphinx-doc.org/en/master/usage/
 
 .. code:: rst
 
-    .. image:: https://readthedocs.org/projects/python-dev-tips/badge/?version=latest
-        :target: http://python-dev-tips.readthedocs.io/en/latest/
+    .. image:: https://readthedocs.org/projects/pydevtips/badge/?version=latest
+        :target: http://pydevtips.readthedocs.io/en/latest/
         :alt: Documentation Status
 
 which when rendered will make the following badge:
 
-.. image:: https://readthedocs.org/projects/python-dev-tips/badge/?version=latest
-    :target: http://python-dev-tips.readthedocs.io/en/latest/
+.. image:: https://readthedocs.org/projects/pydevtips/badge/?version=latest
+    :target: http://pydevtips.readthedocs.io/en/latest/
     :alt: Documentation Status
 
 You can also create `badges from GitHub Actions <https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge>`__.
