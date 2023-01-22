@@ -61,7 +61,7 @@ Here are some recommended steps to get started with Sphinx:
         (docs_env) pip install -r requirements.txt
 
 #. Inside your virtual environment, run ``sphinx-quickstart`` to creates a lot of the boilerplate configurations. This will guide you through a set of questions, such as your project details. We recommend creating separate ``source`` and ``build`` directories.
-#. Build the documentation, e.g. with ``make html``.
+#. Build the documentation, e.g. with ``make html`` (from inside the ``docs`` folder).
 #. Open ``docs/build/html/index.html`` in a browser to see your initial documentation!
 
 Editing your documentation
@@ -89,7 +89,7 @@ Adding new pages to your documentation amount to:
 
 #. Creating new RST files.
 #. Including them in your ``index.rst`` file.
-#. Rebuilding the documentation, e.g. with ``make html``.
+#. Rebuilding the documentation, e.g. with ``make html`` (from inside the ``docs`` folder).
 
 You may also need to edit the ``conf.py`` file to use different features.
 Check out our `index.rst <https://raw.githubusercontent.com/ebezzam/python-dev-tips/main/docs/source/index.rst>`__
