@@ -15,6 +15,7 @@ Contents
 
 .. toctree::
 
+   remote_development
    documentation
    badges
 
