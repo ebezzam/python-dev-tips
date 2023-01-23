@@ -21,6 +21,7 @@ setuptools.setup(
     install_requires=[
         "numpy",
         "matplotlib",
+        "hydra-core",
     ],
     include_package_data=True,
 )

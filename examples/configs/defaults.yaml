@@ -1,0 +1,12 @@
+hydra:
+  job:
+    chdir: True    # change to output folder
+  job_logging:
+    formatters:
+      simple:
+        format: '[%(levelname)s] - %(message)s'
+
+seed: 0
+
+signal_len: 1000
+filter_len: 10

@@ -1,0 +1,6 @@
+# python examples/real_convolve.py -cn exp1
+defaults:
+  - defaults
+  - _self_
+
+filter_len: 25
