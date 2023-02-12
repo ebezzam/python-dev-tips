@@ -7,6 +7,5 @@ hydra:
         format: '[%(levelname)s] - %(message)s'
 
 seed: 0
-
 signal_len: 1000
 filter_len: 10

@@ -20,6 +20,7 @@ setuptools.setup(
     python_requires=">=3.8",
     install_requires=[
         "numpy",
+        "scipy",
         "matplotlib",
         "hydra-core",
     ],

@@ -9,8 +9,7 @@ import os
 def main(config):
 
     output_dir = os.getcwd()
-    seed = config.seed
-    np.random.seed(seed)
+    np.random.seed(config.seed)
 
     # Create a signal
     signal = np.random.randn(config.signal_len)
@@ -20,7 +19,7 @@ def main(config):
     filter = np.ones(n) / n
 
     # initialize the convolver
-    convolver = RFFTConvolve(filter=filter, length=len(signal))
+    convolver = RFFTConvolve(filt=filter, length=len(signal))
 
     # convolve
     convolved_signal = convolver(signal)

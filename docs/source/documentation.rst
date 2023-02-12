@@ -1,13 +1,29 @@
 Documentation
 =============
 
-We will be using `Sphinx <https://www.sphinx-doc.org/en/master/>`__ to generate documentation from 
-docstrings that are written within code. Docstrings are long-form
+*"Documentation is a love letter that you write to your future self."*
+
+*-- Damian Conway*
+
+Documentation is a critical part of any software project. It is the first
+point of contact for new users, and it is the first place to look for
+developers when they need to understand how a piece of code works. It is
+also a great way to share your knowledge with the community.
+
+*As a minimum*, it's good to have a README file that describes:
+
+* What the project is about.
+* How to install the project.
+* How to use the project.
+
+Inside your code, comments can be very useful to describe what a function or 
+script does. Even better, is to add `docstrings <https://peps.python.org/pep-0257/#what-is-a-docstring>`_
+to your functions and classes. Docstrings are long-form
 comments beneath class and functions declaration that typically describe:
 
-- What the function or class does.
-- Its inputs and their data types.
-- Its outputs and their data types.
+* What the function or class does.
+* Its inputs and their data types.
+* Its outputs and their data types.
 
 For example:
 
@@ -35,7 +51,17 @@ For example:
         assert isinstance(b, int)
         return a + b
 
-Which will be rendered as :func:`pydevtips.utils.add`.
+A documentation generator, such as `Sphinx <https://www.sphinx-doc.org/en/master/>`__,
+can then be used to render your docstrings into a static website, as shown at
+:func:`pydevtips.utils.add` for the above example.
+
+
+This website can be hosted *for free* on `ReadTheDocs <https://readthedocs.org/>`__ (like this!)
+or on GitHub pages. It is also possible to host the documentation on your own
+server.
+
+Below we describe how to setup your project to generate documentation with Sphinx,
+and how to host it on ReadTheDocs.
 
 Initial setup
 -------------
@@ -101,6 +127,7 @@ You can do a clean build of your documentation with the following commands:
 
 .. code:: bash
 
+    # inside `docs` folder
     make clean
     make html
 
@@ -133,7 +160,7 @@ Pro-tips
 * `Add the path <https://github.com/ebezzam/python-dev-tips/blob/e51dd62a2dd156fdd3e559be3930f87f2a4e6405/docs/source/conf.py#L22>`__ 
   to your package, so that it doesn't have to be installed (again keeping your documentation environment light!).
 * `Automate year <https://github.com/ebezzam/python-dev-tips/blob/e51dd62a2dd156fdd3e559be3930f87f2a4e6405/docs/source/conf.py#L32>`__.
-
+* You can reference other sections in your documentation by their title, e.g. :ref:`like this <Code formatting>` with ``:ref:`like this <Code formatting>``.
 
 Publishing
 ----------
