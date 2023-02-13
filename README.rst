@@ -121,6 +121,7 @@ TODO
 ====
 
 - writing: packaging
+- badge for google slides
 - change documentation links to main branch
 - joblib example in profile
 - github page
@@ -129,3 +130,4 @@ TODO
 - manifest file to not include file in package
 - GitHub actions for releasing to PyPi when changes to version
 - cupy / pytorch compatible
+- Cython / C++

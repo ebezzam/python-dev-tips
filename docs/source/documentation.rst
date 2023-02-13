@@ -6,8 +6,8 @@ Documentation
 *-- Damian Conway*
 
 Documentation is a critical part of any software project. It is the first
-point of contact for new users, and it is the first place to look for
-developers when they need to understand how a piece of code works. It is
+point of contact for new users, and it is the first thing developers look 
+for when they need to understand how a piece of code works. It is
 also a great way to share your knowledge with the community.
 
 *As a minimum*, it's good to have a README file that describes:
