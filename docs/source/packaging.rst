@@ -70,6 +70,8 @@ Below is the ``setup.py`` file for this "dummy" project.
 * Line 9-10: for your name and contact info.
 * Line 20-26: specifies the Python version and package dependencies.
 
+For a more in-depth description, check out `this article <https://towardsdatascience.com/setuptools-python-571e7d5500f2>`_.
+
 Releasing new version and deploying to PyPI
 -------------------------------------------
 
