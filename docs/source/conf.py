@@ -44,6 +44,7 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
+    "sphinx.ext.autosectionlabel",
 ]
 
 autodoc_default_options = {

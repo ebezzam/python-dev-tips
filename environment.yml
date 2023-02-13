@@ -1,0 +1,23 @@
+name: project_env
+channels:
+- conda-forge
+- defaults
+dependencies:
+- bzip2=1.0.8=h0d85af4_4
+- ca-certificates=2022.9.24=h033912b_0
+- libffi=3.4.2=h0d85af4_5
+- libsqlite=3.40.0=ha978bb4_0
+- libzlib=1.2.13=hfd90126_4
+- ncurses=6.3=h96cf925_1
+- openssl=3.0.7=hfd90126_0
+- pip=22.3.1=pyhd8ed1ab_0
+- python=3.9.13=hf8d34f4_0_cpython
+- readline=8.1.2=h3899abd_0
+- setuptools=65.5.1=pyhd8ed1ab_0
+- sqlite=3.40.0=h9ae0607_0
+- tk=8.6.12=h5dbffcc_0
+- tzdata=2022f=h191b570_0
+- wheel=0.38.4=pyhd8ed1ab_0
+- xz=5.2.6=h775f41a_0
+prefix: /Users/eric/anaconda3/envs/project_env
+

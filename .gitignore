@@ -1,6 +1,9 @@
 project_env/
 .DS_Store
 
+# from hydra
+outputs/   
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

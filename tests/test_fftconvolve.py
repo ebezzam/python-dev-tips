@@ -16,7 +16,7 @@ fft_naive = np.convolve(signal, filter, mode="full")
 def test_rfft():
 
     # create object
-    rfft_convolver = RFFTConvolve(filter=filter, length=len(signal))
+    rfft_convolver = RFFTConvolve(filt=filter, length=len(signal))
 
     # convolve
     rfft_out = rfft_convolver(signal)

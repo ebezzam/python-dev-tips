@@ -16,7 +16,7 @@ signal = np.random.randn(n)
 filter = np.random.randn(n)
 
 # create FFT objects
-rfft_convolver = RFFTConvolve(filter=filter, length=len(signal))
+rfft_convolver = RFFTConvolve(filt=filter, length=len(signal))
 fft_convolver = FFTConvolve(filter=filter, length=len(signal))
 
 # profile

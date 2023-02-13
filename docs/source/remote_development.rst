@@ -1,4 +1,4 @@
-Remote Development
+Remote development
 ==================
 
 In machine learning and scientific computing applications, you may find yourself in a situation where you need to develop and deploy code on a remote machine.

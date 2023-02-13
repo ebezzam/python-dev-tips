@@ -1,5 +1,5 @@
 ******************************************************************************************************************************************
-python-dev-tips, `Slides <https://docs.google.com/presentation/d/1BnezhwUy22DiF72wss8GU_YIMfhjortz-uILdIFGuoM/edit?usp=sharing>`__
+pydevtips, `Slides <https://docs.google.com/presentation/d/1BnezhwUy22DiF72wss8GU_YIMfhjortz-uILdIFGuoM/edit?usp=sharing>`__
 ******************************************************************************************************************************************
 
 .. image:: https://readthedocs.org/projects/pydevtips/badge/?version=latest
@@ -11,15 +11,75 @@ python-dev-tips, `Slides <https://docs.google.com/presentation/d/1BnezhwUy22DiF7
     :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/python.yml
     :alt: Unit tests and formatting
 
-Tutorial first given at ENS Ulm (January 2023) on how to develop a Python package. There is a slight focus on scientific computing, but the general principles apply to any Python project.
 
-.. contents:: **Table of Contents**
+.. |ss| raw:: html
 
-Creating virtual environment and local install
-==============================================
+   <strike>
 
-With `Anaconda <https://www.anaconda.com/>`__ (recommended). 
-After installing Anaconda or `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`__ (light version), create a new environment:
+.. |se| raw:: html
+
+   </strike>
+
+
+Reproducibility is important for software: *if it's not reproducible, 
+it's not useful*. Even if you don't plan on sharing your code, imagine 
+coming back to a project after a few weeks, or having
+to install it on a new machine. You'll be all the more thankful to your
+past self if you have a clear way to install and run your code.
+
+This repository is a collection of tips and tricks for developing stable 
+and reproducible Python code. There is a slight focus on scientific 
+computing, but the general principles can apply to most Python projects.
+If you're reading this from GitHub, please check out the 
+`documentation <https://pydevtips.readthedocs.io/en/latest/>`_ for a
+more in-depth explanation of the topics covered.
+
+The intended audience is myself (as I often find myself going to past
+projects to find how I did something!), but also for students and 
+anyone who is interested in learning some new tricks or even 
+sharing their own! I try to follow the principles laid out here on
+development and reproducibility, so feel free to point out any lapses
+or suggest improvements, either by opening an issue or pull request.
+
+As is typical in open source, there are many ways to do the same thing.
+But hopefully this gives you a starting point. Feel free to pick and 
+choose the features that you like. This flexibility is one of the best
+(and worst parts) of open source. Some of the things we cover:
+
+* Virtual environments.
+* Version control.
+* Reproducible examples.
+* Documentation.
+* Code formatting.
+* Unit tests and continuous integration.
+* Packaging and distribution.
+* Remove development.
+
+The accompanying 
+`slides <https://docs.google.com/presentation/d/1BnezhwUy22DiF72wss8GU_YIMfhjortz-uILdIFGuoM/edit?usp=sharing>`__ 
+are from a tutorial given at ENS Ulm (January 2023). 
+Feel free to modify and use it for your own purposes.
+
+.. note::
+
+    A good amount of this documentation and code is written with `GitHub 
+    Copilot <https://github.com/features/copilot>`_, which I highly recommend for development. If you don't like
+    writing documentation, it is a great way to get started as it is able to 
+    understand the functionality of your code and produce meaningful text to describe it. 
+    It should be used be used with caution, |ss| *but it can be a great tool for getting started* |se|
+    and you often you need to make a few tweaks (*like the previous repetition*).
+    But it's a huge time-saver!
+
+Installation
+============
+
+This "dummy" package can be installed with pip:
+
+.. code:: bash
+
+    pip install pydevtips
+
+Or from source, e.g. with Anaconda / Miniconda:
 
 .. code:: bash
 
@@ -35,115 +95,39 @@ After installing Anaconda or `Miniconda <https://docs.conda.io/en/latest/minicon
     # install package locally
     (project_env) pip install -e .
 
-    # deactivate environment
-    (project_env) conda deactivate
-
-
-For machines really light on memory (e.g. Raspberry Pi) use 
-`Virtualenv <https://virtualenv.pypa.io/en/latest/>`__:
-
-.. code:: bash
-
-    # install library if not already
-    pip install virtualenv
-
-    # create virtual environment (creates folder called project_env)
-    python3 -m venv project_env
-
-    # activate virtual environment
-    source project_env/bin/activate
-
-    # install package locally
-    (project_env) pip install -e .
-
-    # deactivate virtual environment
-    (project_env) deactivate
-
-
-Code formatting
-===============
-
-Through pre-commit hooks:
-
-.. code:: bash
-
-    # inside virtual environment
-    (project_env) pip install pre-commit
-    (project_env) pip install black
-
-    # Install git hooks
-    (project_env) pre-commit install
-    # pre-commit installed at .git/hooks/pre-commit
-
-
-Testing
-=======
-
-Write tests in the `tests` folder as function that begin with `test_`.
-
-To run tests (install `pytest <https://docs.pytest.org/en/stable/>`__ first if not already done):
-
-.. code:: bash
-
-    # inside virtual environment
-    (project_env) pip install pytest
-
     # run tests
     (project_env) pytest
 
-To run a specific test:
+    # deactivate environment
+    (project_env) conda deactivate
+
+Examples
+========
+
+Examples can be found in the ``examples`` and ``notebooks`` folders.
+Scripts from the ``examples`` folder should be run from the root of the
+repository, e.g.:
 
 .. code:: bash
 
-    # inside virtual environment
-    (project_env) pytest tests/test_fftconvolve.py::test_fft
+    python examples/real_convolve.py
 
-
-Releasing new version and deploying to PyPi
-===========================================
-
-Uploading to PyPi is done via `twine <https://pypi.org/project/twine/>`__.
-
-In the steps below and **after merging to** ``main``, replace "X.X.X" with the appropriate version number.
-
-See `Semantic Versioning <https://semver.org/>`__ for recommendations on picking version numbers.
-
-.. code:: bash
-
-    # inside virtual environment
-    (project_env) pip install twine
-
-    # edit version in setup
-    # build package
-    (project_env) python setup.py sdist bdist_wheel
-    # -- creates zip in dist folder
-
-    # upload to pypi
-    (project_env) python -m twine upload  dist/pydevtips-X.X.X.tar.gz
-    # -- X.X.X is the version number in setup.py
-    # -- enter username and password
-    # -- check https://pypi.org/project/pydevtips/X.X.X/
-
-    # new tag on GitHub
-    git tag -a X.X.X -m "version X.X.X"
-    git push origin X.X.X
-
-On `GitHub <https://github.com/ebezzam/python-dev-tips/tags>`__ create a new release by:
-
-#. Clicking (the rightmost) "..." dropdown menu.
-#. Selecting "Create release". 
-#. At the bottom pressing "Publish release".
+Parameter setting is done with `hydra <https://hydra.cc/>`_. More on that
+in the :ref:`Reproducible examples<Reproducible examples>` section of the 
+documentation.
 
 
 TODO
 ====
 
+- writing: packaging
+- badge for google slides
 - change documentation links to main branch
 - joblib example in profile
 - github page
 - point out features in scripts: object-oriented, asserts, tqdm, type hints
 - matplotlib, pytest, black in dev install
-- example file with hydra
 - manifest file to not include file in package
 - GitHub actions for releasing to PyPi when changes to version
-- adding badges to README
+- cupy / pytorch compatible
+- Cython / C++

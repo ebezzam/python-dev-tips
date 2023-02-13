@@ -15,8 +15,14 @@ Contents
 
 .. toctree::
 
-   remote_development
+   virtual_env
+   version_control
+   reproducible
    documentation
+   code_formatting
+   testing
+   packaging
+   remote_development
    badges
 
 .. toctree::
