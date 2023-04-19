@@ -30,7 +30,7 @@ past self if you have a clear way to install and run your code.
 This repository is a collection of tips and tricks for developing stable 
 and reproducible Python code. There is a slight focus on scientific 
 computing, but the general principles can apply to most Python projects.
-If you're reading this from GitHub, please check out the 
+If you're reading this from `GitHub <https://github.com/ebezzam/python-dev-tips>`_, please check out the 
 `documentation <https://pydevtips.readthedocs.io/en/latest/>`_ for a
 more in-depth explanation of the topics covered.
 
