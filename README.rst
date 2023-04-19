@@ -120,6 +120,7 @@ documentation.
 TODO
 ====
 
+- numba: https://numba.pydata.org/
 - picking a license
 - badge for google slides
 - change documentation links to main branch
@@ -128,6 +129,5 @@ TODO
 - matplotlib, pytest, black in dev install
 - manifest file to not include file in package
 - GitHub actions for releasing to PyPi when changes to version
-- cupy for GPU
 - pytorch compatible
 - Cython / C++

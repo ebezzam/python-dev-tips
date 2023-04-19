@@ -23,6 +23,7 @@ setuptools.setup(
         "scipy",
         "matplotlib",
         "hydra-core",
+        "tqdm",
     ],
     include_package_data=True,
 )
