@@ -120,14 +120,15 @@ documentation.
 TODO
 ====
 
-- writing: packaging
+- picking a license
 - badge for google slides
 - change documentation links to main branch
-- joblib example in profile
+- joblib for parallelizing, example in profile
 - github page
 - point out features in scripts: object-oriented, asserts, tqdm, type hints
 - matplotlib, pytest, black in dev install
 - manifest file to not include file in package
 - GitHub actions for releasing to PyPi when changes to version
-- cupy / pytorch compatible
+- cupy for GPU
+- pytorch compatible
 - Cython / C++
