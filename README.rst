@@ -123,7 +123,6 @@ TODO
 - picking a license
 - badge for google slides
 - change documentation links to main branch
-- joblib for parallelizing, example in profile
 - github page
 - point out features in scripts: object-oriented, asserts, tqdm, type hints
 - matplotlib, pytest, black in dev install
