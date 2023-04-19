@@ -5,9 +5,15 @@ pip install joblib
 
 """
 
-from joblib import Parallel, delayed
+
 import numpy as np
 import time
+
+try:
+    from joblib import Parallel, delayed
+except ImportError:
+    print("Install joblib to run this example")
+    exit()
 
 
 def f(seed, n, proc_time):
@@ -28,17 +34,17 @@ if __name__ == "__main__":
     # Compare processing time for serial and parallel processing
 
     # Serial processing
-    start = time.time()
+    start = time.perf_counter()
     outputs_ser = []
     for seed in range(n_exp):
         outputs_ser.append(f(seed, n, proc_time))
-    serial_time = time.time() - start
+    serial_time = time.perf_counter() - start
     print(f"Serial processing took {serial_time} seconds")
 
     # Parallel processing
-    start = time.time()
+    start = time.perf_counter()
     outputs_par = Parallel(n_jobs=n_cpu)(delayed(f)(seed, n, proc_time) for seed in range(n_exp))
-    parallel_time = time.time() - start
+    parallel_time = time.perf_counter() - start
     print(f"Parallel processing took {parallel_time} seconds")
 
     # Speed-up

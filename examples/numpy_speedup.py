@@ -20,20 +20,20 @@ a = np.random.randn(n)
 b = np.random.randn(n)
 
 # Nonvectorized
-start = time.time()
+start = time.perf_counter()
 for _ in range(n_trials):
     c = []
     for i in range(len(a)):
         c.append(a[i] + b[i])
     c = np.array(c)
-nonvectorized_time = (time.time() - start) / n_trials
+nonvectorized_time = (time.perf_counter() - start) / n_trials
 print(f"Nonvectorized time: {nonvectorized_time} seconds")
 
 # Vectorized
-start = time.time()
+start = time.perf_counter()
 for _ in range(n_trials):
     c_vec = a + b
-vectorized_time = (time.time() - start) / n_trials
+vectorized_time = (time.perf_counter() - start) / n_trials
 print(f"Vectorized time: {vectorized_time} seconds")
 
 assert np.allclose(c, c_vec)
@@ -47,20 +47,20 @@ a = np.random.randn(n, n)
 b = np.random.randn(n)  # add a row vector to each row of a
 
 # Nonvectorized
-start = time.time()
+start = time.perf_counter()
 for _ in range(n_trials):
     c = []
     for i in range(len(a)):
         c.append(a[i] + b)
     c = np.array(c)
-nonvectorized_time = (time.time() - start) / n_trials
+nonvectorized_time = (time.perf_counter() - start) / n_trials
 print(f"Nonvectorized time: {nonvectorized_time} seconds")
 
 # Vectorized
-start = time.time()
+start = time.perf_counter()
 for _ in range(n_trials):
     c_vec = a + b[np.newaxis, :]
-vectorized_time = (time.time() - start) / n_trials
+vectorized_time = (time.perf_counter() - start) / n_trials
 print(f"Vectorized time: {vectorized_time} seconds")
 
 assert np.allclose(c, c_vec)
@@ -74,20 +74,20 @@ n_signals = 500
 a = np.random.randn(n, n_signals)
 
 # Nonvectorized
-start = time.time()
+start = time.perf_counter()
 for _ in range(n_trials):
     c = []
     for i in range(n_signals):
         c.append(np.fft.fft(a[:, i]))
     c = np.array(c)
-nonvectorized_time = (time.time() - start) / n_trials
+nonvectorized_time = (time.perf_counter() - start) / n_trials
 print(f"Nonvectorized time: {nonvectorized_time} seconds")
 
 # Vectorized
-start = time.time()
+start = time.perf_counter()
 for _ in range(n_trials):
     c_vec = np.fft.fft(a, axis=0)
-vectorized_time = (time.time() - start) / n_trials
+vectorized_time = (time.perf_counter() - start) / n_trials
 print(f"Vectorized time: {vectorized_time} seconds")
 
 assert np.allclose(c.T, c_vec)
@@ -99,20 +99,20 @@ print("\n-- Using smaller data types if possible")
 
 # float64
 a = np.random.randn(512, 512)
-start = time.time()
+start = time.perf_counter()
 for _ in range(n_trials):
     # b = np.fft.rfft2(a)
     b = rfft2(a)
-float64_time = (time.time() - start) / n_trials
+float64_time = (time.perf_counter() - start) / n_trials
 print(f"float64 time: {float64_time} seconds")
 
 # float32
 a32 = a.astype(np.float32)
-start = time.time()
+start = time.perf_counter()
 for _ in range(n_trials):
     # b32 = np.fft.rfft2(a32)
     b32 = rfft2(a32)
-float32_time = (time.time() - start) / n_trials
+float32_time = (time.perf_counter() - start) / n_trials
 print(f"float32 time: {float32_time} seconds")
 
 assert b32.dtype == np.complex64

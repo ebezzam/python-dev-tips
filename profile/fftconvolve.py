@@ -9,7 +9,7 @@ np.random.seed(seed)
 
 
 # create random signal
-n = 1000
+n = 10000
 signal = np.random.randn(n)
 
 # create filter
@@ -25,24 +25,24 @@ n_trials = 100
 # rfft
 print("rfft")
 rfft_convolved_signal = np.zeros_like(signal)
-start_time = time.time()
+start_time = time.perf_counter()
 for _ in tqdm(range(n_trials)):
     rfft_out = rfft_convolver(signal)
-proc_time_rfft = (time.time() - start_time) / n_trials
+proc_time_rfft = (time.perf_counter() - start_time) / n_trials
 
 # fft
 print("fft")
 fft_convolved_signal = np.zeros_like(signal)
-start_time = time.time()
+start_time = time.perf_counter()
 for _ in tqdm(range(n_trials)):
     fft_out = fft_convolver(signal)
-proc_time_fft = (time.time() - start_time) / n_trials
+proc_time_fft = (time.perf_counter() - start_time) / n_trials
 
 # fft without initializing
 print("fft naive (without initializing)")
 for _ in tqdm(range(n_trials)):
     fft_naive_out = np.convolve(signal, filter, mode="full")
-proc_time_fft_naive = (time.time() - start_time) / n_trials
+proc_time_fft_naive = (time.perf_counter() - start_time) / n_trials
 
 # check results
 assert np.allclose(rfft_out, fft_out)
