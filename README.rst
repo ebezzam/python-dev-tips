@@ -96,6 +96,7 @@ Or from source, e.g. with Anaconda / Miniconda:
     (project_env) pip install -e .
 
     # run tests
+    # - one time: pip install pytest
     (project_env) pytest
 
     # deactivate environment
