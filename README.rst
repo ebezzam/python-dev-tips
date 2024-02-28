@@ -84,7 +84,7 @@ Or from source, e.g. with Anaconda / Miniconda:
 .. code:: bash
 
     # create new environment, press enter to accept
-    conda create -n project_env python=3.9
+    conda create -n project_env python=3.11
 
     # view available environments
     conda info --envs
