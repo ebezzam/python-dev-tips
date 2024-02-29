@@ -116,9 +116,9 @@ appropriate object class based on your configuration. See the script
 for the example.
 
 .. code-block:: python
-  
+
     @hydra.main(version_base=None, config_path="configs", config_name="defaults")
-    def run(config):
+    def main(config):
         # instantiate object from config
         signal = instantiate(config.signal)
         # application specific choice of object class
