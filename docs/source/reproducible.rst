@@ -104,3 +104,40 @@ configuration file and use it the script like so:
         # Set the seed for numpy
         np.random.seed(config.seed)
         # application-specific seed setting
+
+Instantiating objects
+---------------------
+
+Another cool feature of Hydra is object instantiating. Imagine you want to try different 
+Optimizers for your Deep Neural Network (DNN) or you want to try different DNNs in the same pipeline.
+Instead of doing ``if-else`` statements, you write one line of code and let Hydra choose the
+appropriate object class based on your configuration. See the script
+`examples/hydra_instantiate.py <https://github.com/ebezzam/python-dev-tips/blob/main/examples/hydra_instantiate.py>`_
+for the example.
+
+.. code-block:: python
+    @hydra.main(version_base=None, config_path="configs", config_name="instantiate")
+    def run(config):
+        # instantiate object from config
+        example_array = instantiate(config.array)
+        # application specific choice of object class
+
+``instantiate`` function from ``hydra.utils`` allows you to define an object in a YAML file 
+without being tied to a particular class. To do this, you need to define ``_target_`` in 
+your config (see configs in ``configs/array``) and object initialization arguments. Object class 
+can be either defined in your project (``configs/array/ExampleZeros``, ``configs/array/ExampleArange``)
+or taken from a package (``configs/array/ExampleNumpy``).
+
+Note that here we use another Hydra feature: config grouping and splitting. Instead of writing 
+configurations for all objects in the main config and copying configuration files, we create a sub-directory ``array``,
+where all ``array`` configs are defined. Now we can run the main config with the ``array`` of
+our choice simply by specifying it in the command line. For example, ``python3 hydra_instantiate.py array=ExampleNumpy``
+or ``python3 hydra_instantiate.py array=ExampleZeros``.
+
+Object instantiating is recursive, i.e. some of the arguments of the class can also be
+defined using ``_target_`` and they will be created automatically. For example,
+``python3 hydra_instantiate.py array=ExampleArange +array/transform=power`` defines the ``transform`` argument of
+the ``ExampleArange`` class as the ``PowerTransform`` class. The ``+array/transform=power`` in the command line 
+means adding the ``transform`` argument to the current ``array`` configuration from the ``power.yaml`` config defined
+in ``configs/array/transform``. That is, you can have sub-sub-directories. The default values from sub-sub-directories
+can also be changed in the command-line: ``python3 hydra_instantiate.py array=ExampleArange +array/transform=power array.transform.pow=3``

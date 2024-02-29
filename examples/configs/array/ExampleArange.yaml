@@ -1,0 +1,2 @@
+_target_: hydra_instantiate.ExampleArange
+n: 4

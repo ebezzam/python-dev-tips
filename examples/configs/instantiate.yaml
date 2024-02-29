@@ -1,0 +1,13 @@
+# python examples/real_convolve.py -cn exp1
+defaults:
+  - array: ExampleZeros
+  - _self_
+
+
+hydra:
+  job:
+    chdir: True    # change to output folder
+  job_logging:
+    formatters:
+      simple:
+        format: '[%(levelname)s] - %(message)s'
