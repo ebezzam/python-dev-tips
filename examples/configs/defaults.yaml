@@ -1,3 +1,7 @@
+defaults:
+  - signal: ExampleNumpy
+  - _self_
+
 hydra:
   job:
     chdir: True    # change to output folder

@@ -1,0 +1,2 @@
+_target_: real_convolve.ExampleCustom
+numpy_method: arange
