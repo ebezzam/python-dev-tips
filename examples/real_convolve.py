@@ -2,7 +2,54 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pydevtips.fftconvolve import RFFTConvolve
 import hydra
+from hydra.utils import instantiate
 import os
+
+
+class PowerTransform:
+    def __init__(self, pow):
+        self.pow = pow
+
+    def __call__(self, x):
+        return np.power(x, self.pow)
+
+
+class ExampleZeros:
+    """
+    Wrapper over np.zeros
+    """
+
+    def __init__(self, signal_len) -> None:
+        self.data = np.zeros(signal_len)
+
+    def max(self):
+        return self.data.max()
+
+    def __array__(self):
+        return self.data
+
+    def __len__(self):
+        return len(self.data)
+
+
+class ExampleCustom:
+    """
+    Wrapper over custom np.ndarray creation method with an optional transform
+    """
+
+    def __init__(self, signal_len, numpy_method, transform=None) -> None:
+        self.data = getattr(np, numpy_method)(signal_len)
+        if transform is not None:
+            self.data = transform(self.data)
+
+    def max(self):
+        return self.data.max()
+
+    def __array__(self):
+        return self.data
+
+    def __len__(self):
+        return len(self.data)
 
 
 @hydra.main(version_base=None, config_path="configs", config_name="defaults")
@@ -12,7 +59,10 @@ def main(config):
     np.random.seed(config.seed)
 
     # Create a signal
-    signal = np.random.randn(config.signal_len)
+    signal = instantiate(config.signal, config.signal_len)
+    # Note that we added extra argument signal_len which was not defined in signal config
+    print(f"Signal class, len and max: {type(signal), len(signal), signal.max()}")
+    signal = np.array(signal)  # for the following computations np.ndarray is required
 
     # Create a moving average filter (low pass)
     n = config.filter_len
