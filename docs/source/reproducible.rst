@@ -132,8 +132,8 @@ or taken from a package (``configs/signal/ExampleNumpy``).
 Note that here we use another Hydra feature: config grouping and splitting. Instead of writing 
 configurations for all objects in the main config and copying configuration files, we create a sub-directory ``signal``,
 where all ``signal`` configs are defined. Now we can run the main config with the ``signal`` of
-our choice simply by specifying it in the command line. For example, ``python real_convolve.py signal=ExampleNumpy``
-or ``python real_convolve.py signal=ExampleZeros``.
+our choice simply by specifying it in the command line. For example, ``python examples/real_convolve.py signal=ExampleNumpy``
+or ``python examples/real_convolve.py signal=ExampleZeros``.
 
 If we need to define some of the arguments inside the code before creating an object, we can pass them directly to the ``instantiate`` function.
 For example, we did not define ``signal_len`` in the ``signal`` configuration file and passed it by hand:
@@ -143,8 +143,8 @@ like ``numpy.random.randn`` in our example. Note that we can both define argumen
 
 Object instantiating is recursive, i.e. some of the arguments of the class can also be
 defined using ``_target_`` and they will be created automatically. For example,
-``python real_convolve.py signal=ExampleCustom +signal/transform=power`` defines the ``transform`` argument of
+``python examples/real_convolve.py signal=ExampleCustom +signal/transform=power`` defines the ``transform`` argument of
 the ``ExampleCustom`` class as the ``PowerTransform`` class. The ``+signal/transform=power`` in the command line 
 means adding the ``transform`` argument to the current ``signal`` configuration from the ``power.yaml`` config defined
 in ``configs/signal/transform``. That is, you can have sub-sub-directories. The default values from sub-sub-directories
-can also be changed in the command-line: ``python real_convolve.py signal=ExampleCustom +signal/transform=power signal.transform.pow=3``
+can also be changed in the command-line: ``python examples/real_convolve.py signal=ExampleCustom +signal/transform=power signal.transform.pow=3``
