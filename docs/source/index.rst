@@ -19,7 +19,7 @@ Contents
    version_control
    reproducible
    documentation
-   code_formatting
+   clean_code
    testing
    packaging
    remote_development

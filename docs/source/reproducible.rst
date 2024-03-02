@@ -87,8 +87,9 @@ can also save the results of the run in that folder:
         # Save the results
         np.save(os.path.join(os.getcwd(), "results.npy"), results)
 
-This makes hydra a great tool for keeping tracking of experiment runs and their 
+This makes Hydra a great tool for keeping tracking of experiment runs and their 
 parameters, while limiting changes to the code (and having new code commits).
+Check out `this blog post <https://medium.com/@bezzam/hydra-for-cleaner-python-code-and-better-reproducibility-in-research-c035028101f9>`_ for more on Hydra.
 
 Setting the seed
 ----------------
@@ -105,46 +106,3 @@ configuration file and use it the script like so:
         np.random.seed(config.seed)
         # application-specific seed setting
 
-Instantiating objects
----------------------
-
-Another cool feature of Hydra is `object instantiating <https://hydra.cc/docs/advanced/instantiate_objects/overview/>`_.
-Imagine you want to try different optimizers for your Deep Neural Network (DNN) or you want to try different DNNs in the same pipeline.
-Instead of doing ``if-else`` statements, you write one line of code and let Hydra choose the
-appropriate object class based on your configuration. See the script
-`examples/real_convolve.py <https://github.com/ebezzam/python-dev-tips/blob/main/examples/real_convolve.py>`_
-for the example.
-
-.. code-block:: python
-
-    @hydra.main(version_base=None, config_path="configs", config_name="defaults")
-    def main(config):
-        # instantiate object from config
-        signal = instantiate(config.signal)
-        # application specific choice of object class
-
-``instantiate`` function from ``hydra.utils`` allows you to define an object in a YAML file 
-without being tied to a particular class. To do this, you need to define ``_target_`` in 
-your config (see configs in ``configs/signal``) and object initialization arguments. Object class 
-can be either defined in your project (``configs/signal/ExampleZeros``, ``configs/signal/ExampleCustom``)
-or taken from a package (``configs/signal/ExampleNumpy``).
-
-Note that here we use another Hydra feature: config grouping and splitting. Instead of writing 
-configurations for all objects in the main config and copying configuration files, we create a sub-directory ``signal``,
-where all ``signal`` configs are defined. Now we can run the main config with the ``signal`` of
-our choice simply by specifying it in the command line. For example, ``python examples/real_convolve.py signal=ExampleNumpy``
-or ``python examples/real_convolve.py signal=ExampleZeros``.
-
-If we need to define some of the arguments inside the code before creating an object, we can pass them directly to the ``instantiate`` function.
-For example, we did not define ``signal_len`` in the ``signal`` configuration file and passed it by hand:
-``signal = instantiate(config.signal, config.signal_len)``. This is especially useful when you have positional-only arguments
-like ``numpy.random.randn`` in our example. Note that we can both define arguments in the configuration file and pass new ones to ``instantiate`` like we did for
-``ExampleCustom``.
-
-Object instantiating is recursive, i.e. some of the arguments of the class can also be
-defined using ``_target_`` and they will be created automatically. For example,
-``python examples/real_convolve.py signal=ExampleCustom +signal/transform=power`` defines the ``transform`` argument of
-the ``ExampleCustom`` class as the ``PowerTransform`` class. The ``+signal/transform=power`` in the command line 
-means adding the ``transform`` argument to the current ``signal`` configuration from the ``power.yaml`` config defined
-in ``configs/signal/transform``. That is, you can have sub-sub-directories. The default values from sub-sub-directories
-can also be changed in the command-line: ``python examples/real_convolve.py signal=ExampleCustom +signal/transform=power signal.transform.pow=3``
