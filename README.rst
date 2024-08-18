@@ -1,6 +1,6 @@
-******************************************************************************************************************************************
-pydevtips, `Slides <https://docs.google.com/presentation/d/1BnezhwUy22DiF72wss8GU_YIMfhjortz-uILdIFGuoM/edit?usp=sharing>`__
-******************************************************************************************************************************************
+*********************************************************************************************************************************************************************************************************************************************
+pydevtips: Python Development Tips (`Video <https://youtu.be/okxaTuBdDuY?si=5AQ5pOpmsCH8BLt2&t=3803>`__, `Slides <https://docs.google.com/presentation/d/1D1_JywMl2rjaeuVzpykPBOJsDIuwQKGOJB4EFZjej2s/edit#slide=id.g2eaa4b61f15_0_1346>`__)
+*********************************************************************************************************************************************************************************************************************************************
 
 .. image:: https://readthedocs.org/projects/pydevtips/badge/?version=latest
     :target: http://pydevtips.readthedocs.io/en/latest/
@@ -56,8 +56,9 @@ choose the features that you like. This flexibility is one of the best
 * Remove development.
 
 The accompanying 
-`slides <https://docs.google.com/presentation/d/1BnezhwUy22DiF72wss8GU_YIMfhjortz-uILdIFGuoM/edit?usp=sharing>`__ 
-are from a tutorial given at ENS Ulm (January 2023). 
+`slides <https://docs.google.com/presentation/d/1D1_JywMl2rjaeuVzpykPBOJsDIuwQKGOJB4EFZjej2s/edit#slide=id.g2eaa4b61f15_0_1346>`__ 
+and `video <https://youtu.be/okxaTuBdDuY?si=5AQ5pOpmsCH8BLt2&t=3803>`__
+are from a tutorial given at LauzHack's `Deep Learning Bootcamp <https://github.com/LauzHack/deep-learning-bootcamp>`__. 
 Feel free to modify and use it for your own purposes.
 
 .. note::
