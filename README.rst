@@ -54,6 +54,7 @@ choose the features that you like. This flexibility is one of the best
 * Unit tests and continuous integration.
 * Packaging and distribution.
 * Remove development.
+* Creating and sharing datasets with Hugging Face.
 
 The accompanying 
 `slides <https://docs.google.com/presentation/d/1BnezhwUy22DiF72wss8GU_YIMfhjortz-uILdIFGuoM/edit?usp=sharing>`__ 
