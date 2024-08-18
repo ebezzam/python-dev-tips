@@ -29,5 +29,5 @@ You can also create `badges from GitHub Actions <https://docs.github.com/en/acti
     :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/python.yml
     :alt: Unit tests and formatting
 
-Finally, you can use `Badgen <https://badgen.net/>`__ to create custom badges.
+Finally, you can use `Badgen <https://badgen.net/>`__ or `Shields.io <https://shields.io/badges>`__ to create custom badges.
 

@@ -1,6 +1,6 @@
-*********************************************************************************************************************************************************************************************************************************************
-pydevtips: Python Development Tips (`Video <https://youtu.be/okxaTuBdDuY?si=5AQ5pOpmsCH8BLt2&t=3803>`__, `Slides <https://docs.google.com/presentation/d/1D1_JywMl2rjaeuVzpykPBOJsDIuwQKGOJB4EFZjej2s/edit#slide=id.g2eaa4b61f15_0_1346>`__)
-*********************************************************************************************************************************************************************************************************************************************
+***************************************
+pydevtips: Python Development Tips
+***************************************
 
 .. image:: https://readthedocs.org/projects/pydevtips/badge/?version=latest
     :target: http://pydevtips.readthedocs.io/en/latest/
@@ -10,6 +10,14 @@ pydevtips: Python Development Tips (`Video <https://youtu.be/okxaTuBdDuY?si=5AQ5
 .. image:: https://github.com/ebezzam/python-dev-tips/actions/workflows/python.yml/badge.svg
     :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/python.yml
     :alt: Unit tests and formatting
+
+.. image:: https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white
+    :target: https://youtu.be/okxaTuBdDuY?si=5AQ5pOpmsCH8BLt2&t=3803
+    :alt: Recording
+
+.. image:: https://img.shields.io/badge/Google_Slides-yellow
+    :target: https://docs.google.com/presentation/d/1D1_JywMl2rjaeuVzpykPBOJsDIuwQKGOJB4EFZjej2s/edit#slide=id.g2eaa4b61f15_0_1346
+    :alt: Slides
 
 
 .. |ss| raw:: html
@@ -124,7 +132,6 @@ TODO
 
 - numba: https://numba.pydata.org/
 - picking a license
-- badge for google slides
 - change documentation links to main branch
 - github page
 - point out features in scripts: object-oriented, asserts, tqdm, type hints
