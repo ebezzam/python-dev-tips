@@ -61,7 +61,8 @@ choose the features that you like. This flexibility is one of the best
 * Code formatting.
 * Unit tests and continuous integration.
 * Packaging and distribution.
-* Remove development.
+* Remote development.
+* Creating and sharing datasets with Hugging Face.
 
 The accompanying 
 `slides <https://docs.google.com/presentation/d/1D1_JywMl2rjaeuVzpykPBOJsDIuwQKGOJB4EFZjej2s/edit#slide=id.g2eaa4b61f15_0_1346>`__ 

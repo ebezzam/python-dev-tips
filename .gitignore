@@ -1,5 +1,6 @@
 project_env/
 .DS_Store
+dataset/*
 
 # from hydra
 outputs/   

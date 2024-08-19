@@ -1,0 +1,29 @@
+# python examples/create_huggingface_dataset.py hf_token=YOUR_TOKEN
+hydra:
+  job:
+    chdir: True    # change to output folder
+  job_logging:
+    formatters:
+      simple:
+        format: '[%(levelname)s] - %(message)s'
+
+repo_id: bezzam/dummy-dataset
+seed: 0
+test_size: 0.15
+hf_token:
+
+data_dir:
+  audio:
+    dir: dataset/data_audio
+    type: wav
+  image:
+    dir: dataset/data_images
+    type: png
+  text:
+    dir: dataset/data_text
+    type: txt
+  label:
+    file: dataset/data_labels.csv
+    label: True
+
+stratify_by_column: label
