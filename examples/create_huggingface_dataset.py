@@ -80,13 +80,16 @@ def main(config):
                 os.makedirs(input_dir, exist_ok=True)
                 for i in range(n_files):
                     if data_type == "png":
-                        img = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
+                        dim = np.random.randint(100, 200)
+                        img = np.random.randint(0, 255, (dim, dim, 3), dtype=np.uint8)
                         img_path = os.path.join(input_dir, f"{i}.png")
                         PILImage.fromarray(img).save(img_path)
                     elif data_type == "wav":
-                        audio = np.random.randn(16000)
+                        duration = np.random.randint(1, 4)
+                        sample_rate = 16000
+                        audio = np.random.randn(duration * sample_rate)
                         audio_path = os.path.join(input_dir, f"{i}.wav")
-                        sf.write(audio_path, audio, samplerate=16000)
+                        sf.write(audio_path, audio, samplerate=sample_rate)
                     elif data_type == "txt":
                         text = f"Hello, this is file {i}"
                         text_path = os.path.join(input_dir, f"{i}.txt")
