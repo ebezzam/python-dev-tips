@@ -53,13 +53,15 @@ jobs:
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
-        poetry run flake8 . --count --select=B,C,E,F,W,T4,B9 --show-source --statistics --max-complexity=18 --max-line-length=100 --ignore=E203,E266,E501,W503,F403,F401,C901
+        poetry run flake8 pydevtips/*.py --count --select=B,C,E,F,W,T4,B9 --show-source --statistics --max-complexity=18 --max-line-length=100 --ignore=E203,E266,E501,W503,F403,F401,C901
+        poetry run flake8 examples/*.py --count --select=B,C,E,F,W,T4,B9 --show-source --statistics --max-complexity=18 --max-line-length=100 --ignore=E203,E266,E501,W503,F403,F401,C901
+        poetry run flake8 profile/*.py --count --select=B,C,E,F,W,T4,B9 --show-source --statistics --max-complexity=18 --max-line-length=100 --ignore=E203,E266,E501,W503,F403,F401,C901
+        poetry run flake8 tests/*.py --count --select=B,C,E,F,W,T4,B9 --show-source --statistics --max-complexity=18 --max-line-length=100 --ignore=E203,E266,E501,W503,F403,F401,C901
     - name: Format with black
       run: |
-        poetry run black *.py -l 100
+        poetry run black pydevtips/*.py -l 100
         poetry run black examples/*.py -l 100
         poetry run black profile/*.py -l 100
-        poetry run black pydevtips/*.py -l 100
         poetry run black tests/*.py -l 100
     - name: Test with pytest
       run: poetry run pytest -v
