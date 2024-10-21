@@ -6,3 +6,12 @@ repos:
     -   id: poetry-lock
     -   id: poetry-export
     -   id: poetry-install
+-   repo: https://github.com/psf/black
+    rev: 22.12.0
+    hooks:
+    - id: black
+      language_version: python3
+-   repo: https://github.com/PyCQA/flake8
+    rev: 6.0.0
+    hooks:
+    - id: flake8

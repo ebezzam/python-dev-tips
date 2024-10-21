@@ -17,12 +17,10 @@ class FFTConvolveBase:
             Length of the signal to convolve with.
         """
 
-        assert isinstance(filt, 
-                          np.ndarray)
+        assert isinstance(filt, np.ndarray)
         self.filter = filt
         self.signal_length = length
-        self.pad_length = len(filt
-                              ) + length - 1
+        self.pad_length = len(filt) + length - 1
         self.filter_frequency_response = self._compute_filter_frequency_response()
 
     @abstractmethod
@@ -43,8 +41,7 @@ class FFTConvolveBase:
         raise NotImplementedError
 
     @abstractmethod
-    def __call__(self, 
-                 signal) -> np.ndarray:
+    def __call__(self, signal) -> np.ndarray:
         """Apply the filter to the signal, in the frequency domain."""
         pass
 
@@ -52,8 +49,7 @@ class FFTConvolveBase:
 class RFFTConvolve(FFTConvolveBase):
     """Real FFT convolve."""
 
-    def __init__(self, filt, 
-                 length) -> None:
+    def __init__(self, filt, length) -> None:
         """
         Create convolver that uses a real-valued filter.
 
