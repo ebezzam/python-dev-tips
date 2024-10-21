@@ -1,3 +1,4 @@
+# Poetry GitHub Action: https://github.com/marketplace/actions/python-poetry-action
 name: pydevtips
 
 # on: [push, pull_request]
@@ -33,27 +34,32 @@ jobs:
       uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Python Poetry Action
+    - name: Install poetry
       uses: abatilo/actions-poetry@v3.0.0
       with:
         poetry-version: ${{ matrix.poetry-version }}
+    - name: Setup a local virtual environment (if no poetry.toml file)
+      run: |
+        poetry config virtualenvs.create true --local
+        poetry config virtualenvs.in-project true --local
+    - uses: actions/cache@v3
+      name: Define a cache for the virtual environment based on the dependencies lock file
+      with:
+        path: ./.venv
+        key: venv-${{ hashFiles('poetry.lock') }}
     - name: Install dependencies and build package
       run: |
         poetry install --with dev
     - name: Lint with flake8
       run: |
-        pip install flake8
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=B,C,E,F,W,T4,B9 --show-source --statistics --max-complexity=18 --max-line-length=100 --ignore=E203,E266,E501,W503,F403,F401,C901
     - name: Format with black
       run: |
-        pip install black
         black *.py -l 100
         black examples/*.py -l 100
         black profile/*.py -l 100
         black pydevtips/*.py -l 100
         black tests/*.py -l 100
     - name: Test with pytest
-      run: |
-        pip install -U pytest
-        pytest
+      run: poetry run pytest -v
