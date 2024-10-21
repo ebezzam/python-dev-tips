@@ -43,7 +43,8 @@ class FFTConvolveBase:
         raise NotImplementedError
 
     @abstractmethod
-    def __call__(self, signal) -> np.ndarray:
+    def __call__(self, 
+                 signal) -> np.ndarray:
         """Apply the filter to the signal, in the frequency domain."""
         pass
 
@@ -51,7 +52,8 @@ class FFTConvolveBase:
 class RFFTConvolve(FFTConvolveBase):
     """Real FFT convolve."""
 
-    def __init__(self, filt, length) -> None:
+    def __init__(self, filt, 
+                 length) -> None:
         """
         Create convolver that uses a real-valued filter.
 
