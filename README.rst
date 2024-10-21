@@ -20,13 +20,13 @@ pydevtips: Python Development Tips
     :alt: Slides
 
 
-.. |ss| raw:: html
+.. .. |ss| raw:: html
 
-   <strike>
+..    <strike>
 
-.. |se| raw:: html
+.. .. |se| raw:: html
 
-   </strike>
+..    </strike>
 
 
 Reproducibility is important for software: *if it's not reproducible, 
@@ -75,7 +75,7 @@ Feel free to modify and use it for your own purposes.
     Copilot <https://github.com/features/copilot>`_, which I highly recommend for development. If you don't like
     writing documentation, it is a great way to get started as it is able to 
     understand the functionality of your code and produce meaningful text to describe it. 
-    It should be used be used with caution, |ss| *but it can be a great tool for getting started* |se|
+    It should be used be used with caution, *but it can be a great tool for getting started*
     and you often you need to make a few tweaks (*like the previous repetition*).
     But it's a huge time-saver!
 
@@ -107,7 +107,7 @@ Or from source, e.g. with Anaconda / Miniconda:
     (project_env) poetry install --with dev
 
     # run tests
-    (project_env) pytest
+    (project_env) poetry run pytest
 
     # deactivate environment
     (project_env) conda deactivate
@@ -124,8 +124,8 @@ repository, e.g.:
     python examples/real_convolve.py
 
 Parameter setting is done with `hydra <https://hydra.cc/>`_. More on that
-in the :ref:`Reproducible examples<Reproducible examples>` section of the 
-documentation.
+in the `Reproducible examples <https://pydevtips.readthedocs.io/en/latest/reproducible.html>`_
+section of the documentation.
 
 
 TODO

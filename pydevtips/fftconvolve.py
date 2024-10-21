@@ -17,10 +17,12 @@ class FFTConvolveBase:
             Length of the signal to convolve with.
         """
 
-        assert isinstance(filt, np.ndarray)
+        assert isinstance(filt, 
+                          np.ndarray)
         self.filter = filt
         self.signal_length = length
-        self.pad_length = len(filt) + length - 1
+        self.pad_length = len(filt
+                              ) + length - 1
         self.filter_frequency_response = self._compute_filter_frequency_response()
 
     @abstractmethod
