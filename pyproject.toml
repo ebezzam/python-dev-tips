@@ -1,3 +1,44 @@
+[tool.poetry]
+name = "pydevtips"
+version = "0.0.3"
+description = "Functions and scripts to demonstrate Python development tips."
+authors = ["Eric Bezzam <ebezzam@gmail.com>"]
+license = "MIT"
+
+# -- manually modifications
+readme = "README.rst"
+package-mode = true   # https://python-poetry.org/docs/basic-usage/#operating-modes
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^2.1.2"
+scipy = "^1.14.1"
+matplotlib = "^3.9.2"
+hydra-core = "^1.3.2"
+tqdm = "^4.66.5"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+isort = "^5.13.2"
+flake8 = "^7.1.1"
+pytest = "^8.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+# -- manually added
+
+[project.urls]
+Homepage = "https://github.com/ebezzam/python-dev-tips"
+Issues = "https://github.com/ebezzam/python-dev-tips/issues"
+Documentation = "https://pydevtips.readthedocs.io"
+
+[tool.isort]
+profile = "black"
+
 [tool.black]
 line-length = 100
 include = '\.pyi?$'

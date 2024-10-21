@@ -93,6 +93,8 @@ Or from source, e.g. with Anaconda / Miniconda:
 .. code:: bash
 
     # create new environment, press enter to accept
+    # -- important to set python version, otherwise `python` executable may not exist 
+    # -- (would be `python3` instead)
     conda create -n project_env python=3.11
 
     # view available environments
@@ -102,10 +104,9 @@ Or from source, e.g. with Anaconda / Miniconda:
     conda activate project_env
 
     # install package locally
-    (project_env) pip install -e .
+    (project_env) poetry install --with dev
 
     # run tests
-    # - one time: pip install pytest
     (project_env) pytest
 
     # deactivate environment

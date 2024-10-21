@@ -1,0 +1,59 @@
+name: pydevtips
+
+# on: [push, pull_request]
+on:
+  # trigger on pushes and PRs to main
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      max-parallel: 12
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.10", "3.11"]
+        poetry-version: ["1.8.4"]
+    steps:
+    - uses: actions/checkout@v4
+    - name: Checkout submodules
+      shell: bash
+      run: |
+        auth_header="$(git config --local --get http.https://github.com/.extraheader)"
+        git submodule sync --recursive
+        git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Python Poetry Action
+      uses: abatilo/actions-poetry@v3.0.0
+      with:
+        poetry-version: ${{ matrix.poetry-version }}
+    - name: Install dependencies and build package
+      run: |
+        poetry install --with dev
+    - name: Lint with flake8
+      run: |
+        pip install flake8
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=B,C,E,F,W,T4,B9 --show-source --statistics --max-complexity=18 --max-line-length=100 --ignore=E203,E266,E501,W503,F403,F401,C901
+    - name: Format with black
+      run: |
+        pip install black
+        black *.py -l 100
+        black examples/*.py -l 100
+        black profile/*.py -l 100
+        black pydevtips/*.py -l 100
+        black tests/*.py -l 100
+    - name: Test with pytest
+      run: |
+        pip install -U pytest
+        pytest

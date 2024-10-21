@@ -1,0 +1,44 @@
+# Following this tutorial: https://packaging.python.org/en/latest/tutorials/packaging-projects/
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pydevtips"
+version = "0.0.3"
+authors = [
+  { name="Eric Bezzam", email="ebezzam@gmail.com" },
+]
+description = "Functions and scripts to demonstrate Python development tips."
+readme = "README.rst"
+content-type = "text/x-rst"    # or "text/markdown" if using Markdown
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "scipy",
+  "matplotlib",
+  "hydra-core",
+  "tqdm",
+]
+
+[project.urls]
+Homepage = "https://github.com/ebezzam/python-dev-tips"
+Issues = "https://github.com/ebezzam/python-dev-tips/issues"
+Documentation = "https://pydevtips.readthedocs.io"
+
+[tool.black]
+line-length = 100
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | build
+  | dist
+)/
+'''
