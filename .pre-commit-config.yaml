@@ -1,10 +1,8 @@
 repos:
--   repo: https://github.com/psf/black
-    rev: 22.12.0
+-   repo: https://github.com/python-poetry/poetry
+    rev: '1.8.4'  # add version here
     hooks:
-    - id: black
-      language_version: python3
--   repo: https://github.com/PyCQA/flake8
-    rev: 6.0.0
-    hooks:
-    - id: flake8
+    -   id: poetry-check
+    -   id: poetry-lock
+    -   id: poetry-export
+    -   id: poetry-install
