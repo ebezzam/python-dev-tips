@@ -28,8 +28,8 @@ pydevtips: Python Development Tips
 ..    </strike>
 
 
-Reproducibility is important for software: *if it's not reproducible, 
-it's not useful*. Even if you don't plan on sharing your code, imagine 
+| Reproducibility is important for software: *if it's not reproducible, it's not useful*. 
+Even if you don't plan on sharing your code, imagine 
 coming back to a project after a few weeks, or having
 to install it on a new machine. You'll be all the more thankful to your
 past self if you have a clear way to install and run your code.
