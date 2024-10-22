@@ -13,4 +13,4 @@ which can also help in the reproducibility of your code by allowing others to
 conveniently access your code. Example platforms for Git are GitHub, GitLab,
 and Bitbucket. GitHub is the most popular, and is used for this project.
 
-More on Git and GitHub can be found in this `interactive tutorial <https://docs.google.com/presentation/d/1a2Op-2eDT4RUKAblTcTJIvhfif4YFCIG/edit?usp=sharing&ouid=115816041756434628590&rtpof=true&sd=true>`_.
+More on Git and GitHub can be found in this `tutorial <https://docs.google.com/presentation/d/1D1_JywMl2rjaeuVzpykPBOJsDIuwQKGOJB4EFZjej2s/edit#slide=id.g2eaa4b61f15_0_336>`_.

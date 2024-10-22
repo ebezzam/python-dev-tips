@@ -15,9 +15,9 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 import datetime
+import os
 import sys
 from unittest import mock
-import os
 
 sys.path.insert(0, os.path.abspath(os.path.join("..", "..")))
 
@@ -55,7 +55,7 @@ autodoc_typehints = "none"  # for cleaner sphinx output, don't show type hints
 intersphinx_mapping = {
     "python": ("https://docs.python.org/3/", None),
     "NumPy [latest]": ("https://docs.scipy.org/doc/numpy/", None),
-    "matplotlib": ("http://matplotlib.sourceforge.net/", None),
+    "matplotlib [stable]": ("https://matplotlib.org/stable/", None),
 }
 intersphinx_disabled_domains = ["std"]
 

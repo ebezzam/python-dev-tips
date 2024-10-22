@@ -54,13 +54,13 @@ But hopefully this gives you a starting point. Feel free to pick and
 choose the features that you like. This flexibility is one of the best
 (and worst parts) of open source. Some of the things we cover:
 
+* Packaging and distribution with `Poetry <https://python-poetry.org/>`_.
 * Virtual environments.
 * Version control.
 * Reproducible examples.
 * Documentation.
 * Code formatting.
 * Unit tests and continuous integration.
-* Packaging and distribution.
 * Remove development.
 
 The accompanying 
@@ -131,12 +131,12 @@ section of the documentation.
 TODO
 ====
 
+- switch to ruff for code formatting: https://docs.astral.sh/ruff/
 - numba: https://numba.pydata.org/
 - picking a license
 - change documentation links to main branch
 - github page
 - point out features in scripts: object-oriented, asserts, tqdm, type hints
-- matplotlib, pytest, black in dev install
 - manifest file to not include file in package
 - GitHub actions for releasing to PyPi when changes to version
 - pytorch compatible
