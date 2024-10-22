@@ -7,8 +7,8 @@ pydevtips: Python Development Tips
     :alt: Documentation Status
 
 
-.. image:: https://github.com/ebezzam/python-dev-tips/actions/workflows/python.yml/badge.svg
-    :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/python.yml
+.. image:: https://github.com/ebezzam/python-dev-tips/actions/workflows/poetry.yml/badge.svg
+    :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/poetry.yml
     :alt: Unit tests and formatting
 
 .. image:: https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white
@@ -25,12 +25,12 @@ pydevtips: Python Development Tips
 ..    <strike>
 
 .. .. |se| raw:: html
-
 ..    </strike>
 
+|
 
-Reproducibility is important for software: *if it's not reproducible, 
-it's not useful*. Even if you don't plan on sharing your code, imagine 
+Reproducibility is important for software: *if it's not reproducible, it's not useful*. 
+Even if you don't plan on sharing your code, imagine 
 coming back to a project after a few weeks, or having
 to install it on a new machine. You'll be all the more thankful to your
 past self if you have a clear way to install and run your code.
@@ -55,13 +55,13 @@ choose the features that you like. This flexibility is one of the best
 (and worst parts) of open source. Some of the things we cover:
 
 * Packaging and distribution with `Poetry <https://python-poetry.org/>`_.
-* Virtual environments.
-* Version control.
-* Reproducible examples.
-* Documentation.
-* Code formatting.
-* Unit tests and continuous integration.
-* Remove development.
+* Virtual environments with `Conda <https://docs.conda.io/en/latest/>`_ and `virtualenv <https://virtualenv.pypa.io/en/latest/>`_.
+* Version control with Git/GitHub.
+* Reproducible examples with `Hydra <https://hydra.cc/>`_.
+* Documentation with `Sphinx <https://www.sphinx-doc.org/en/master/>`_.
+* Code formatting with Black, Flake8, and isort.
+* Unit tests and continuous integration with `pytest <https://docs.pytest.org/en/stable/>`_ and `GitHub Actions <https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python>`_.
+* Remote development with `VS Code <https://code.visualstudio.com/>` and `SSH <https://en.wikipedia.org/wiki/Secure_Shell>`_.
 
 The accompanying 
 `slides <https://docs.google.com/presentation/d/1D1_JywMl2rjaeuVzpykPBOJsDIuwQKGOJB4EFZjej2s/edit#slide=id.g2eaa4b61f15_0_1346>`__ 

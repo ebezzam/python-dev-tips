@@ -21,12 +21,12 @@ You can also create `badges from GitHub Actions <https://docs.github.com/en/acti
 
 .. code:: rst
 
-    .. image:: https://github.com/ebezzam/python-dev-tips/actions/workflows/python.yml/badge.svg
-        :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/python.yml
+    .. image:: https://github.com/ebezzam/python-dev-tips/actions/workflows/poetry.yml/badge.svg
+        :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/poetry.yml
         :alt: Unit tests and formatting
 
-.. image:: https://github.com/ebezzam/python-dev-tips/actions/workflows/python.yml/badge.svg
-    :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/python.yml
+.. image:: https://github.com/ebezzam/python-dev-tips/actions/workflows/poetry.yml/badge.svg
+    :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/poetry.yml
     :alt: Unit tests and formatting
 
 Finally, you can use `Badgen <https://badgen.net/>`__ or `Shields.io <https://shields.io/badges>`__ to create custom badges.
