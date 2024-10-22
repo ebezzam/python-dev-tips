@@ -54,13 +54,13 @@ choose the features that you like. This flexibility is one of the best
 (and worst parts) of open source. Some of the things we cover:
 
 * Packaging and distribution with `Poetry <https://python-poetry.org/>`_.
-* Virtual environments.
-* Version control.
-* Reproducible examples.
-* Documentation.
-* Code formatting.
-* Unit tests and continuous integration.
-* Remove development.
+* Virtual environments with `Conda <https://docs.conda.io/en/latest/>`_ and `virtualenv <https://virtualenv.pypa.io/en/latest/>`_.
+* Version control with Git/GitHub.
+* Reproducible examples with `Hydra <https://hydra.cc/>`_.
+* Documentation with `Sphinx <https://www.sphinx-doc.org/en/master/>`_.
+* Code formatting with Black, Flake8, and isort.
+* Unit tests and continuous integration with `pytest <https://docs.pytest.org/en/stable/>`_ and `GitHub Actions <https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python>`_.
+* Remote development with `VS Code <https://code.visualstudio.com/>` and `SSH <https://en.wikipedia.org/wiki/Secure_Shell>`_.
 
 The accompanying 
 `slides <https://docs.google.com/presentation/d/1D1_JywMl2rjaeuVzpykPBOJsDIuwQKGOJB4EFZjej2s/edit#slide=id.g2eaa4b61f15_0_1346>`__ 
