@@ -7,8 +7,8 @@ pydevtips: Python Development Tips
     :alt: Documentation Status
 
 
-.. image:: https://github.com/ebezzam/python-dev-tips/actions/workflows/python.yml/badge.svg
-    :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/python.yml
+.. image:: https://github.com/ebezzam/python-dev-tips/actions/workflows/poetry.yml/badge.svg
+    :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/poetry.yml
     :alt: Unit tests and formatting
 
 .. image:: https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white
@@ -25,7 +25,6 @@ pydevtips: Python Development Tips
 ..    <strike>
 
 .. .. |se| raw:: html
-
 ..    </strike>
 
 
