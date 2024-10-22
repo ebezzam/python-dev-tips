@@ -5,10 +5,10 @@ description = "Functions and scripts to demonstrate Python development tips."
 authors = ["Eric Bezzam <ebezzam@gmail.com>"]
 license = "MIT"
 
-# -- manually modifications
+# -- manually added --
 readme = "README.rst"
 package-mode = true   # https://python-poetry.org/docs/basic-usage/#operating-modes
-
+# --------------------
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -25,12 +25,27 @@ isort = "^5.13.2"
 flake8 = "^7.1.1"
 pytest = "^8.3.3"
 pre-commit = "^4.0.1"
+twine = "^5.1.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-# -- manually added
+#### -- manually added (below)
+
+[project]
+name = "pydevtips"
+version = "0.0.3"
+authors = [
+  { name="Eric Bezzam", email="ebezzam@gmail.com" },
+]
+description = "Functions and scripts to demonstrate Python development tips."
+readme = "README.rst"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
 
 [project.urls]
 Homepage = "https://github.com/ebezzam/python-dev-tips"
