@@ -27,6 +27,7 @@ pydevtips: Python Development Tips
 .. .. |se| raw:: html
 ..    </strike>
 
+|
 
 Reproducibility is important for software: *if it's not reproducible, it's not useful*. 
 Even if you don't plan on sharing your code, imagine 
