@@ -1,5 +1,6 @@
 project_env/
 .DS_Store
+dataset/
 
 # from hydra
 outputs/   
@@ -13,6 +14,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+poetry.lock
 .Python
 build/
 develop-eggs/

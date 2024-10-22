@@ -1,4 +1,11 @@
 repos:
+-   repo: https://github.com/python-poetry/poetry
+    rev: '1.8.4'  # add version here
+    hooks:
+    -   id: poetry-check
+    -   id: poetry-lock
+    -   id: poetry-export
+    -   id: poetry-install
 -   repo: https://github.com/psf/black
     rev: 22.12.0
     hooks:
@@ -8,3 +15,8 @@ repos:
     rev: 6.0.0
     hooks:
     - id: flake8
+-   repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+    - id: isort
+      name: isort (python)

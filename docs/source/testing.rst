@@ -57,17 +57,25 @@ To run the unit tests:
 .. code:: bash
 
     # install in virtual environment (if not done already)
-    (project_env) pip install pytest
+    # -- pytest in the dev group
+    (project_env) poetry install --with dev
 
     # run tests
-    (project_env) pytest
+    (project_env) poetry run pytest
+
+    # -- if not using Poetry
+    # (project_env) pip install pytest
+    # (project_env) pytest
 
 To run a specific test:
 
 .. code:: bash
 
     # inside virtual environment
-    (project_env) pytest tests/test_fftconvolve.py::test_fft
+    (project_env) poetry run pytest tests/test_fftconvolve.py::test_fft
+
+    # -- if not using Poetry
+    # (project_env) pytest tests/test_fftconvolve.py::test_fft
 
 
 Continuous integration with GitHub Actions
@@ -82,15 +90,28 @@ the repository. This workflow can build the package, run the unit tests, build t
 documentions, etc for different versions of Python and operating systems.
 
 Workflows are defined in YAML files in the ``.github/workflows`` folder. For example,
-the workflow for this project is defined in `this file <https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/python.yml>`__.
+the workflow for this project is defined in `this file <https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/poetry.yml>`__,
+whose code is shown below:
+
+.. literalinclude:: ../../.github/workflows/poetry.yml
+    :caption: poetry.yml
+    :linenos:
+
 The workflow performs the following:
 
-* Triggers on pushes and pull requests to the ``main`` branch (`code link <https://github.com/ebezzam/python-dev-tips/blob/33e650db7a8085a22623c963b66f3675e7d73558/.github/workflows/python.yml#L4-L11>`__).
-* Performs the test on all combinations of Python 3.8, 3.9, and 3.10 and operating systems
-  Ubuntu, Windows, and macOS (`code link <https://github.com/ebezzam/python-dev-tips/blob/33e650db7a8085a22623c963b66f3675e7d73558/.github/workflows/python.yml#L20-L22>`__).
-* Installs the package and its dependencies (`code link <https://github.com/ebezzam/python-dev-tips/blob/33e650db7a8085a22623c963b66f3675e7d73558/.github/workflows/python.yml#L35-L38>`__).
-* Checks for code formatting and style and errors if it doesn't conform (`code link <https://github.com/ebezzam/python-dev-tips/blob/33e650db7a8085a22623c963b66f3675e7d73558/.github/workflows/python.yml#L39-L51>`__). 
+* (Lines 5-12) Triggers on pushes and pull requests to the ``main`` branch.
+* (Lines 21-24) Performs the test on all combinations of Python versions (3.10 and 3.11) and operating systems
+  Ubuntu, Windows, and macOS.
+* (Lines 33-43) Installs Python, Poetry, and the package with its dependencies.
+* (Lines 44-56) Checks for code formatting and style and errors if it doesn't conform. 
   *Make sure it matches the code formatting you've setup in your project, e.g. via* :ref:`pre-commit hooks <Code formatting>`.
-* Runs the unit tests (`code link <https://github.com/ebezzam/python-dev-tips/blob/33e650db7a8085a22623c963b66f3675e7d73558/.github/workflows/python.yml#L52-L55>`__).
+* (Lines 57-58) Runs the unit tests.
+
+An older version of the workflow (not using Poetry but rather ``setup.py`` with 
+``setuptools``) can be found below:
+
+.. literalinclude:: ../../.github/workflows/setuptools.yml
+    :caption: setuptools.yml (OLD WAY)
+    :linenos:
 
 More information on configuring GitHub Actions can be found in `their documentation <https://docs.github.com/en/actions>`__.

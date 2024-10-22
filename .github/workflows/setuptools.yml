@@ -1,14 +1,11 @@
-name: pydevtips
+name: pydevtips setuptools
 
-# on: [push, pull_request]
+# HACK to not trigger GitHub action
 on:
-  # trigger on pushes and PRs to main
   push:
     branches:
-      - main
-  pull_request:
-    branches:
-      - main
+      - non-existant-branch
+
 
 jobs:
   build:

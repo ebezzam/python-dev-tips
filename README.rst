@@ -20,13 +20,13 @@ pydevtips: Python Development Tips
     :alt: Slides
 
 
-.. |ss| raw:: html
+.. .. |ss| raw:: html
 
-   <strike>
+..    <strike>
 
-.. |se| raw:: html
+.. .. |se| raw:: html
 
-   </strike>
+..    </strike>
 
 
 Reproducibility is important for software: *if it's not reproducible, 
@@ -54,13 +54,13 @@ But hopefully this gives you a starting point. Feel free to pick and
 choose the features that you like. This flexibility is one of the best
 (and worst parts) of open source. Some of the things we cover:
 
+* Packaging and distribution with `Poetry <https://python-poetry.org/>`_.
 * Virtual environments.
 * Version control.
 * Reproducible examples.
 * Documentation.
 * Code formatting.
 * Unit tests and continuous integration.
-* Packaging and distribution.
 * Remove development.
 
 The accompanying 
@@ -75,7 +75,7 @@ Feel free to modify and use it for your own purposes.
     Copilot <https://github.com/features/copilot>`_, which I highly recommend for development. If you don't like
     writing documentation, it is a great way to get started as it is able to 
     understand the functionality of your code and produce meaningful text to describe it. 
-    It should be used be used with caution, |ss| *but it can be a great tool for getting started* |se|
+    It should be used be used with caution, *but it can be a great tool for getting started*
     and you often you need to make a few tweaks (*like the previous repetition*).
     But it's a huge time-saver!
 
@@ -93,6 +93,8 @@ Or from source, e.g. with Anaconda / Miniconda:
 .. code:: bash
 
     # create new environment, press enter to accept
+    # -- important to set python version, otherwise `python` executable may not exist 
+    # -- (would be `python3` instead)
     conda create -n project_env python=3.11
 
     # view available environments
@@ -102,11 +104,10 @@ Or from source, e.g. with Anaconda / Miniconda:
     conda activate project_env
 
     # install package locally
-    (project_env) pip install -e .
+    (project_env) poetry install --with dev
 
     # run tests
-    # - one time: pip install pytest
-    (project_env) pytest
+    (project_env) poetry run pytest
 
     # deactivate environment
     (project_env) conda deactivate
@@ -123,19 +124,19 @@ repository, e.g.:
     python examples/real_convolve.py
 
 Parameter setting is done with `hydra <https://hydra.cc/>`_. More on that
-in the :ref:`Reproducible examples<Reproducible examples>` section of the 
-documentation.
+in the `Reproducible examples <https://pydevtips.readthedocs.io/en/latest/reproducible.html>`_
+section of the documentation.
 
 
 TODO
 ====
 
+- switch to ruff for code formatting: https://docs.astral.sh/ruff/
 - numba: https://numba.pydata.org/
 - picking a license
 - change documentation links to main branch
 - github page
 - point out features in scripts: object-oriented, asserts, tqdm, type hints
-- matplotlib, pytest, black in dev install
 - manifest file to not include file in package
 - GitHub actions for releasing to PyPi when changes to version
 - pytorch compatible

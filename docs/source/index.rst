@@ -15,13 +15,13 @@ Contents
 
 .. toctree::
 
+   packaging
    virtual_env
    version_control
    reproducible
    documentation
    clean_code
    testing
-   packaging
    remote_development
    badges
 

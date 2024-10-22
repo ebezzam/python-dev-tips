@@ -16,10 +16,16 @@ tools that can help us with this task. The ones we use are:
 
 * `Black <https://github.com/psf/black>`_ which will reformat your code 
   in-place to conform to the PEP8 standard.
-* `Flake8 <https://flake8.pycqa.org/en/latest/>`__ which is a *linter* that 
+* `Flake8 <https://flake8.pycqa.org/en/latest/>`_ which is a *linter* that 
   will check your code for errors and style violations, but not reformat it. For
   example, for me it has identified code where I have unused variables or 
   scripts / functions that are too long.
+* `isort <https://pycqa.github.io/isort/>`_ which will sort your imports 
+  alphabetically and group them by type.
+
+There are many alternatives for there tools. An increasingly popular alternative
+is `ruff <https://docs.astral.sh/ruff//>`_, which is written in Rust and is meant
+to replace Flake8, Black, and isort.
 
 While you can use these tools manually, it is much more convenient to use them
 as pre-commit hooks. This means that before you commit your code, these tools
@@ -34,7 +40,7 @@ A few files are needed to setup pre-commit hooks:
   pre-commit hooks. It specifies which tools to use, and how to use them.
 * `.flake8 <https://github.com/ebezzam/python-dev-tips/blob/main/.flake8>`_: This file contains the configuration for Flake8. It specifies 
   e.g. which errors to ignore, and which line length to use. 
-* `pyproject.toml <https://github.com/ebezzam/python-dev-tips/blob/main/pyproject.toml>`_: This file contains the configuration for Black. It 
+* `pyproject.toml <https://github.com/ebezzam/python-dev-tips/blob/main/pyproject.toml>`_: This file contains the configuration for Black and isort. It 
   specifies e.g. which line length to use.
 
 You can then install the pre-commit hooks for your project by running the 
@@ -43,12 +49,17 @@ following commands:
 .. code:: bash
 
     # inside virtual environment
-    (project_env) pip install pre-commit
-    (project_env) pip install black
+    # -- black, flake8, isort are in the dev group
+    (project_env) poetry install --with dev
+
+    # -- if not using Poetry
+    # (project_env) pip install pre-commit black flake8 isort
 
     # Install git hooks
     (project_env) pre-commit install
     # pre-commit installed at .git/hooks/pre-commit
+
+More pre-commit hooks are available provided by `Poetry <https://python-poetry.org/docs/pre-commit-hooks/>`_.
 
 
 Avoiding long ``if-else`` statements with object instantiation

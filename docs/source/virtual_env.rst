@@ -9,8 +9,8 @@ Creating an environment
 -----------------------
 
 There are several ways to create virtual environments. The most popular 
-(and recommended) is with `Anaconda <https://www.anaconda.com/>`__.
-After installing Anaconda or `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`__ (light version), 
+(and recommended) is with `Anaconda <https://www.anaconda.com/>`_.
+After installing Anaconda or `Miniconda <https://docs.conda.io/en/latest/miniconda.html>`_ (light version), 
 you create a new environment like so:
 
 .. code:: bash
@@ -29,7 +29,7 @@ you create a new environment like so:
 
 
 For machines really light on memory (e.g. Raspberry Pi), you can use 
-`Virtualenv <https://virtualenv.pypa.io/en/latest/>`__:
+`Virtualenv <https://virtualenv.pypa.io/en/latest/>`_:
 
 .. code:: bash
 
@@ -47,6 +47,17 @@ For machines really light on memory (e.g. Raspberry Pi), you can use
 
 Note that when the virtual environment is activated, it will
 typically appear in parenthesis in the command line.
+
+In this project we recommend using Poetry, and while Poetry creates a virtual 
+environment per project (as described `here <https://python-poetry.org/docs/basic-usage/#using-your-virtual-environment>`_),
+I typically stick to using one of the above methods for creating virtual environments
+(e.g. to use conda, to share environments with other projects, to use in notebooks).
+You can identify the location and info of the Poetry virtual environment by running:
+
+.. code:: bash
+
+    poetry env info
+
 
 Sharing your environment
 ------------------------
@@ -94,16 +105,3 @@ storing and keeping track of packages:
     Note that this approach is specific to Anaconda / Miniconda. More 
     information can be found 
     `here <https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_.
-
-
-* A more involved approach to package your project, such that it can be installed via ``pip`` with the necessary dependencies:
-
-    .. code:: bash
-    
-        # local install
-        (project_env) pip install -e .
-
-        # if on PyPi
-        (project_env) pip install <PACKAGE_NAME>
-
-    This approach is discussed in PACKAGING.
