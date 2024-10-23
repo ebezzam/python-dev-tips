@@ -88,8 +88,7 @@ This "dummy" package can be installed with pip:
 
     pip install pydevtips
 
-Or from source. Firstly, `Poetry <https://python-poetry.org/docs/#installation>`_
-must be installed. 
+Or from source. Firstly, Poetry must be installed: https://python-poetry.org/docs/#installation 
 
 .. code:: bash
 

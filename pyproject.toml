@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pydevtips"
-version = "0.0.3"
+version = "0.0.4"
 description = "Functions and scripts to demonstrate Python development tips."
 authors = ["Eric Bezzam <ebezzam@gmail.com>"]
 license = "MIT"
@@ -32,20 +32,6 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 #### -- manually added (below)
-
-[project]
-name = "pydevtips"
-version = "0.0.4"
-authors = [
-  { name="Eric Bezzam", email="ebezzam@gmail.com" },
-]
-description = "Functions and scripts to demonstrate Python development tips."
-readme = "README.rst"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-]
 
 [project.urls]
 Homepage = "https://github.com/ebezzam/python-dev-tips"
