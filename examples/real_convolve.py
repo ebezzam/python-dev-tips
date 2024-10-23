@@ -1,9 +1,11 @@
-import numpy as np
-import matplotlib.pyplot as plt
-from pydevtips.fftconvolve import RFFTConvolve
-import hydra
-from hydra.utils import instantiate
 import os
+
+import hydra
+import matplotlib.pyplot as plt
+import numpy as np
+from hydra.utils import instantiate
+
+from pydevtips.fftconvolve import RFFTConvolve
 
 
 class PowerTransform:
