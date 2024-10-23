@@ -1,4 +1,4 @@
-name: project_env
+name: project_env_yml
 channels:
   - defaults
 dependencies:

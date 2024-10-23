@@ -16,7 +16,9 @@ you create a new environment like so:
 .. code:: bash
 
     # create new environment, press enter to accept
-    conda create -n project_env python=3.9
+    # -- important to set python version, otherwise `python` executable may not exist 
+    # -- (would be `python3` instead)
+    conda create -n project_env python=3.11
 
     # view available environments
     conda info --envs
@@ -57,6 +59,12 @@ You can identify the location and info of the Poetry virtual environment by runn
 .. code:: bash
 
     poetry env info
+
+You can also configure to create the virtual environment within the project folder:
+
+.. code:: bash
+
+    poetry config virtualenvs.in-project true
 
 
 Sharing your environment
@@ -100,7 +108,7 @@ storing and keeping track of packages:
     
         conda env list
 
-    The the name of the environment is specified at the top of ``environment.yml``.
+    The name of the environment is specified at the top of ``environment.yml``.
     
     Note that this approach is specific to Anaconda / Miniconda. More 
     information can be found 

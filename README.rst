@@ -88,9 +88,25 @@ This "dummy" package can be installed with pip:
 
     pip install pydevtips
 
-Or from source, e.g. with Anaconda / Miniconda:
+Or from source. Firstly, `Poetry <https://python-poetry.org/docs/#installation>`_
+must be installed. 
 
 .. code:: bash
+
+    # -- recommend using pipx
+    pipx install poetry
+
+    # -- or with official installer
+    # curl -sSL https://install.python-poetry.org | python3 -
+
+
+Then the following commands can be run:
+
+.. code:: bash
+
+    # get source code
+    git clone git@github.com:ebezzam/python-dev-tips.git
+    cd python-dev-tips
 
     # create new environment, press enter to accept
     # -- important to set python version, otherwise `python` executable may not exist 
@@ -106,11 +122,36 @@ Or from source, e.g. with Anaconda / Miniconda:
     # install package locally
     (project_env) poetry install --with dev
 
+    # install pre-commit hooks
+    (project_env) pre-commit install
+
     # run tests
-    (project_env) poetry run pytest
+    (project_env) pytest
 
     # deactivate environment
     (project_env) conda deactivate
+
+Or with just Poetry:
+
+.. code:: bash
+
+    # get source code
+    git clone git@github.com:ebezzam/python-dev-tips.git
+    cd python-dev-tips
+
+    # install package locally
+    poetry install --with dev
+    # -- `poetry env info` to see where the virtual environment is located
+
+    # install pre-commit hooks
+    poetry run pre-commit install
+
+    # run tests
+    poetry run pytest
+
+    ## NOTE that Python related commands need to be run 
+    ## with `poetry run` or by activating the virtual environment
+    ## https://python-poetry.org/docs/basic-usage/#activating-the-virtual-environment
 
 Examples
 ========
