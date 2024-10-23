@@ -99,6 +99,9 @@ must be installed.
     # -- or with official installer
     # curl -sSL https://install.python-poetry.org | python3 -
 
+    # I recommend creating virtual environment in the project folder
+    poetry config virtualenvs.in-project true
+
 
 Then the following commands can be run:
 
@@ -131,7 +134,7 @@ Then the following commands can be run:
     # deactivate environment
     (project_env) conda deactivate
 
-Or with just Poetry:
+Or without ``conda`` and just Poetry:
 
 .. code:: bash
 

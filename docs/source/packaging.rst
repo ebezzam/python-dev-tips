@@ -165,18 +165,18 @@ Or if there are issues with rendering the README file, you can check the logs wi
 Creating a new release on GitHub
 --------------------------------
 
-For a new release, you should create a new tag on GitHub. This can be done with the command below:
+For a new release, you need to create a new tag on GitHub. This can be done with the commands below:
 
 .. code:: bash
 
     git tag -a X.X.X -m "version X.X.X"
     git push origin X.X.X
 
-If you project is hosted on GitHub, you can create a new release by:
+You can create a new release with the following steps:
 
-#. Clicking (the rightmost) "..." dropdown menu (from the `tags page <https://github.com/ebezzam/python-dev-tips/tags>`_).
-#. Selecting "Create release". 
-#. At the bottom pressing "Publish release".
+#. From the `tags page <https://github.com/ebezzam/python-dev-tips/tags>`_, click (the rightmost) "..." dropdown menu.
+#. Select "Create release". 
+#. At the bottom, press "Publish release".
 
 
 setup.py (old way)
