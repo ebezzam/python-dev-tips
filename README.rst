@@ -12,7 +12,7 @@ pydevtips: Python Development Tips
     :alt: Unit tests and formatting
 
 .. image:: https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white
-    :target: https://youtu.be/okxaTuBdDuY?si=5AQ5pOpmsCH8BLt2&t=3803
+    :target: https://youtu.be/BmTBQicddqc?si=cnVcbo36EFNh6dg7
     :alt: Recording
 
 .. image:: https://img.shields.io/badge/Google_Slides-yellow
