@@ -2,10 +2,13 @@
 pydevtips: Python Development Tips
 ***************************************
 
+.. image:: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+    :target: https://github.com/ebezzam/python-dev-tips
+    :alt: GitHub page
+
 .. image:: https://readthedocs.org/projects/pydevtips/badge/?version=latest
     :target: http://pydevtips.readthedocs.io/en/latest/
     :alt: Documentation Status
-
 
 .. image:: https://github.com/ebezzam/python-dev-tips/actions/workflows/poetry.yml/badge.svg
     :target: https://github.com/ebezzam/python-dev-tips/blob/main/.github/workflows/poetry.yml
