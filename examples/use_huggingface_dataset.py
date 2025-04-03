@@ -3,7 +3,7 @@ In this script, we use the Hugging Face dataset made
 from the script examples/create_huggingface_dataset.py
 
 The dataset is available at:
-https://huggingface.co/bezzam/dummy-dataset
+https://huggingface.co/datasets/bezzam/dummy-dataset
 
 ```bash
 # install
